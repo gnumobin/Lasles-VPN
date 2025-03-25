@@ -1,17 +1,20 @@
 @import "tailwindcss";
 
 /* Convert to first desktop approach */
-@custom-variant 2xl (@media (max-width: 96rem));
-@custom-variant xl (@media (max-width: 80rem));
-@custom-variant lg (@media (max-width: 64rem));
-@custom-variant md (@media (max-width: 48rem));
-@custom-variant sm (@media (max-width: 40rem));
-/* Custom Color */
+@custom-variant 2xl (@media (max-width: 96em));
+@custom-variant xl (@media (max-width: 80em));
+@custom-variant lg (@media (max-width: 64em));
+@custom-variant md (@media (max-width: 48em));
+@custom-variant sm (@media (max-width: 40em));
+/* Custom Variables */
 @theme {
+  /* Colors */
   --color-primary: #F53838;
   --color-secondary: #2FAB73;
   --color-gray: #4F5665;
   --color-black: #0B132A;
+  /* Font Sizes */
+  --text-2xl: 1.6rem;
 }
 
 html {
@@ -21,6 +24,19 @@ body {
   font-family: "Rubik", sans-serif;
   color: var(--color-gray);
 }
+
+@media (max-width: 80em) {
+  html { font-size: 60% }
+}
+
+@media (max-width: 64em) {
+  html { font-size: 55% }
+}
+
+@media (max-width: 48em) {
+  html { font-size: 50% }
+}
+
 img,
 button {
   user-select: none;

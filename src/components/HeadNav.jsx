@@ -16,12 +16,12 @@ function HeadNav() {
   const navItems = ["About", "Features", "Pricing", "Testimonials", "Help"];
 
   return (
-    <nav className="mx-aut flex items-center justify-between py-6 px-15">
+    <nav className="max-w-[128rem] mx-auto flex items-center justify-between py-6 px-15">
       {/* Logo Box: First Item of Navigation-Container */}
       <div className="flex items-center gap-4">
         <img src={Logo} alt="website logo" />
         {/* LogoBox Title */}
-        <span className="text-3xl font-medium text-black">
+        <span className="text-4xl font-medium text-black">
           Lasles<strong className="font-extrabold">VPN</strong>
         </span>
       </div>
@@ -29,7 +29,7 @@ function HeadNav() {
       <ul
         className={
           showNavigation
-            ? navListStyles + " left-[-100%]"
+            ? navListStyles + " -left-full"
             : navListStyles + " left-0"
         }
       >
