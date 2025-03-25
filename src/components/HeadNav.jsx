@@ -1,25 +1,65 @@
-import React from 'react'
+import { IoMenu, IoClose } from "react-icons/io5";
+import { useState } from "react";
+import Button from "./Button";
 // Import assets
-import Logo from '../assets/logo.png'
+import Logo from "../assets/logo.png";
 
 function HeadNav() {
-  return <nav className='container flex items-center justify-between py-6 px-15'>
-    <div className='flex items-center gap-4'>
+  // State of show menu
+  const [showNavigation, setShowNavigation] = useState(false);
+  // Handle Show menu for smaller screens
+  const showNavigationHandle = () => setShowNavigation(!showNavigation);
+  // Duplicate Styles for navigation list (ul tag)
+  const navListStyles =
+    "flex gap-[4rem] text-2xl lg:absolute lg:flex-col h-full top-0 lg:w-1/2 lg:bg-gray-100 lg:border-r border-gray-400 lg:p-10 ease-in-out duration-400";
+  // Navigation Items Array
+  const navItems = ["About", "Features", "Pricing", "Testimonials", "Help"];
+
+  return (
+    <nav className="mx-aut flex items-center justify-between py-6 px-15">
+      {/* Logo Box: First Item of Navigation-Container */}
+      <div className="flex items-center gap-4">
         <img src={Logo} alt="website logo" />
-        <span className='text-4xl font-medium'>Lasles<strong className='font-extrabold'>VPN</strong></span>
-    </div>
-    <ul className='flex gap-[4rem] text-2xl'>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Testimonials</a></li>
-        <li><a href="#">Help</a></li>
-    </ul>
-    <div className='text-2xl font-medium'>
-        <button className='py-4.5 px-15 cursor-pointer'>Sign In</button>
-        <button className='py-4.5 px-15 border-1 rounded-full  cursor-pointer'>Sign Up</button>
-    </div>
-  </nav>
+        {/* LogoBox Title */}
+        <span className="text-3xl font-medium text-black">
+          Lasles<strong className="font-extrabold">VPN</strong>
+        </span>
+      </div>
+      {/* List: Second Item of Navigation-Container */}
+      <ul
+        className={
+          showNavigation
+            ? navListStyles + " left-[-100%]"
+            : navListStyles + " left-0"
+        }
+      >
+        {/* Render Navigation items from external data */}
+        {navItems.map((item) => (
+          <li>
+            <a href="#">{item}</a>
+          </li>
+        ))}
+        {/* Buttons! But just show on smaller screens as list item */}
+        <li className="hidden lg:block text-center ">
+          <Button border={false}>Sign In</Button>
+          <Button border={true}>Sign In</Button>
+        </li>
+      </ul>
+      {/* Cta Buttons: Third Item of Navigation-Container */}
+      <div className="lg:hidden">
+        {/* Secondary Button */}
+        <Button border={false}>Sign In</Button>
+        {/* Primary Button */}
+        <Button border={true}>Sign Up</Button>
+      </div>
+      {/* Mobile Menu: Button */}
+      <div className="hidden lg:block">
+        <Button type="menu" onClick={showNavigationHandle}>
+          {showNavigation ? <IoMenu size={32} /> : <IoClose size={32} />}
+        </Button>
+      </div>
+    </nav>
+  );
 }
 
-export default HeadNav
+export default HeadNav;
