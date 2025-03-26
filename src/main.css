@@ -16,9 +16,17 @@
   --color-gray: #4F5665;
   --color-black: #0B132A;
   /* Font Sizes */
+  --text-xl: 1.4rem;
   --text-2xl: 1.6rem;
 }
-
+/* Change Default styles for container */
+@utility container {
+  padding: 3rem;
+  padding-bottom: 6rem;
+  max-width: 128rem;
+  margin: 0 auto;
+}
+/* Global reset */
 html {
   font-size: 62.5%;
 }
@@ -26,7 +34,13 @@ body {
   font-family: "Rubik", sans-serif;
   color: var(--color-gray);
 }
+img,
+button {
+  user-select: none;
+  -webkit-user-drag: none;
+}
 
+/* Global media queries */
 @media (max-width: 80em) {
   html { font-size: 60% }
 }
@@ -37,10 +51,4 @@ body {
 
 @media (max-width: 48em) {
   html { font-size: 50% }
-}
-
-img,
-button {
-  user-select: none;
-  -webkit-user-drag: none;
 }

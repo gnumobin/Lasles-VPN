@@ -19,7 +19,7 @@ function HeadNav() {
   return (
     <>
     <Overlay show={showNavigation} state={setShowNavigation}/>
-    <nav className="max-w-[128rem] mx-auto flex items-center justify-between py-6 px-15">
+    <nav className="container flex items-center justify-between">
       {/* Logo Box: First Item of Navigation-Container */}
       <div className="flex items-center gap-4">
         <img src={Logo} alt="website logo" />
