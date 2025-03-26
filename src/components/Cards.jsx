@@ -4,15 +4,15 @@ import Card from "./Card";
 
 function Cards() {
   return (
-    <section className="text-center bg-[#F6F6F6] pt-25">
+    <section className="text-center pt-25 container">
       <HeadBox title="Choose Your Plan">
         Let's choose the package that is best for you and explore it happily and
         cheerfully.
       </HeadBox>
-      <div className="container grid gap-40 mt-10 grid-cols-3 xl:gap-15 sm:grid-cols-1">
+      <div className="grid gap-40 mt-10 grid-cols-3 xl:gap-15 sm:grid-cols-1">
         <Card />
         <Card />
-        <Card />
+        <Card active={true}/>
       </div>
     </section>
   );

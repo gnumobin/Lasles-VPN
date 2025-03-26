@@ -5,7 +5,7 @@ import HeadBox from "./HeadBox";
 
 function Features() {
   return (
-    <section className="mx-auto max-w-[128rem] pt-22 pb-22 px-15 flex items-center lg:flex-col lg:text-center gap-8">
+    <section className="mx-auto max-w-[128rem] pt-22 pb-22 px-15 flex items-center lg:flex-col lg:text-center gap-8 shadow-2xl shadow-gray-100">
       <div className="w-1/2 lg:w-2/3 lg:mb-20">
         <img
           src={MainPicture}

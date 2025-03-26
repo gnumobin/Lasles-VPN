@@ -2,11 +2,15 @@ import React from "react";
 // import assets
 import CardPicture from "../assets/card.png";
 import Button from "./Button";
-import { IoCheckmarkSharp } from "react-icons/io5";
 
-function Card() {
+function Card({ active }) {
+  const containerStyle =
+    "bg-white border-2 rounded-3xl py-10 px-15 space-y-15 xl:px-10 sm:w-4/5 sm:mx-auto";
+  const activeStyle = active
+    ? `${containerStyle} border-primary`
+    : `${containerStyle} border-[#DDDDDD]`;
   return (
-    <figure className="bg-white border-2 border-[#DDDDDD] rounded-3xl py-10 px-15 space-y-15 xl:px-10 sm:w-4/5 sm:mx-auto">
+    <figure className={activeStyle}>
       <div className="w-1/2 mx-auto">
         <img className="w-full" src={CardPicture} alt="celebration box" />
       </div>
@@ -19,7 +23,14 @@ function Card() {
       </ul>
       <div>
         <p className="text-black font-medium text-5xl mb-6">Free</p>
-        <Button border={true} custom={"block w-2/3 text-4xl"}>
+        <Button
+          type={"shop"}
+          custom={
+            active
+              ? "bg-primary text-white shadow-2xl shadow-primary border-primary"
+              : "text-primary"
+          }
+        >
           Select
         </Button>
       </div>

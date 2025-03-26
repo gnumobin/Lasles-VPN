@@ -5,6 +5,7 @@ import DataBox from './components/DataBox'
 import Features from './components/Features'
 import Cards from './components/Cards'
 import Map from './components/Map'
+import FeaturedIn from './components/FeaturedIn'
 
 function App() {
   return <div>
@@ -14,6 +15,7 @@ function App() {
     <Features />
     <Cards />
     <Map />
+    {/* <FeaturedIn /> */}
   </div>
 }
 
