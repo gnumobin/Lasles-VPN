@@ -62,7 +62,7 @@ button {
 
 /* List Component */
 .list {
-  margin-bottom: 8rem;
+  margin-bottom: 12rem;
 }
 .list .list__item {
   display: flex;

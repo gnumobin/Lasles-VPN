@@ -9,7 +9,7 @@ function Cards() {
         Let's choose the package that is best for you and explore it happily and
         cheerfully.
       </HeadBox>
-      <div className="container grid gap-35 mt-10 grid-cols-3 xl:gap-15 sm:grid-cols-1">
+      <div className="container grid gap-40 mt-10 grid-cols-3 xl:gap-15 sm:grid-cols-1">
         <Card />
         <Card />
         <Card />
