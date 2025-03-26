@@ -4,7 +4,7 @@ import Button from './Button'
 import HeroPicture from '../assets/hero.png'
 
 function Hero() {
-  return <section className='mx-auto max-w-[128rem] flex gap-4 justify-between pt-22 px-15 lg:flex-col-reverse lg:items-center'>
+  return <section className='mx-auto max-w-[128rem] flex gap-4 justify-between pt-22 pb-22 px-15 lg:flex-col-reverse lg:items-center'>
     {/* ContentBox */}
     <div className='w-1/2 lg:w-full lg:text-center'>
         {/* Heading And description for website */}

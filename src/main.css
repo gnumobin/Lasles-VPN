@@ -9,6 +9,8 @@
 /* Custom Variables */
 @theme {
   /* Colors */
+  --color-super-light: #EEEFF2;
+  --color-primary-light: #FFECEC;
   --color-primary: #F53838;
   --color-secondary: #2FAB73;
   --color-gray: #4F5665;
