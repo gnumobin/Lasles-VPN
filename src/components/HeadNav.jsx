@@ -3,19 +3,22 @@ import { useState } from "react";
 import Button from "./Button";
 // Import assets
 import Logo from "../assets/logo.png";
+import Overlay from "./Overlay";
 
 function HeadNav() {
   // State of show menu
-  const [showNavigation, setShowNavigation] = useState(false);
+  const [showNavigation, setShowNavigation] = useState(true);
   // Handle Show menu for smaller screens
   const showNavigationHandle = () => setShowNavigation(!showNavigation);
   // Duplicate Styles for navigation list (ul tag)
   const navListStyles =
-    "flex gap-[4rem] text-2xl lg:absolute lg:flex-col h-full top-0 lg:w-1/2 lg:bg-gray-100 lg:border-r border-gray-400 lg:p-10 ease-in-out duration-400";
+    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col h-full top-0 lg:w-2/3 lg:bg-gray-100 lg:border-r border-gray-400 lg:p-10 ease-in-out duration-400 z-20";
   // Navigation Items Array
   const navItems = ["About", "Features", "Pricing", "Testimonials", "Help"];
 
   return (
+    <>
+    <Overlay show={showNavigation} state={setShowNavigation}/>
     <nav className="max-w-[128rem] mx-auto flex items-center justify-between py-6 px-15">
       {/* Logo Box: First Item of Navigation-Container */}
       <div className="flex items-center gap-4">
@@ -35,7 +38,7 @@ function HeadNav() {
       >
         {/* Render Navigation items from external data */}
         {navItems.map((item) => (
-          <li>
+          <li className="lg:bg-white lg:p-8 rounded-lg">
             <a href="#">{item}</a>
           </li>
         ))}
@@ -53,12 +56,13 @@ function HeadNav() {
         <Button border={true}>Sign Up</Button>
       </div>
       {/* Mobile Menu: Button */}
-      <div className="hidden lg:block">
+      <div className="hidden lg:block relative z-30">
         <Button type="menu" onClick={showNavigationHandle}>
-          {showNavigation ? <IoMenu size={32} /> : <IoClose size={32} />}
+          {showNavigation ? <IoMenu size={32} /> : <IoClose size={32} className="text-primary-light" />}
         </Button>
       </div>
     </nav>
+    </>
   );
 }
 

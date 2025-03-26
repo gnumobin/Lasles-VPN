@@ -7,37 +7,42 @@ function DataBox() {
     {
       label: "Users",
       number: "+90",
-      component: <IoPerson size={24} className="text-primary" />,
+      component: <IoPerson className="text-primary" />,
     },
     {
       label: "Locations",
       number: "+30",
-      component: <IoLocationSharp size={24} className="text-primary" />,
+      component: <IoLocationSharp className="text-primary" />,
     },
     {
       label: "Servers",
       number: "+50",
-      component: <IoCloud size={24} className="text-primary" />,
+      component: <IoCloud className="text-primary" />,
+      noBorder: true
     },
   ];
   return (
-    <div className="flex justify-between p-22 mx-auto shadow-md mb-10 rounded-3xl w-4/5 items-center md:w-[90%]">
+    <div className="flex justify-between p-16 mt-8 mx-auto shadow-md mb-10 rounded-3xl w-4/5 items-center md:w-[90%]">
       {/* Render data items from array */}
       {items.map((item) => (
-        <div className="flex gap-6 items-center md:gap-4">
-          {/* icon box */}
-          <div className="bg-primary-light rounded-full w-24 h-24 flex items-center justify-center md:w-16 md:h-16">
-            {/* icon */}
-            {item.component}
+        <>
+          <div className="flex gap-8 items-center md:gap-4">
+            {/* icon box */}
+            <div className="bg-primary-light rounded-full p-4 flex items-center justify-center md:w-16 md:h-16 text-5xl md:text-3xl">
+              {/* icon */}
+              {item.component}
+            </div>
+            {/* content box */}
+            <div>
+              <p className="text-4xl text-black font-bold mb-2 md:text-2xl">
+                {item.number}
+              </p>
+              <p className="text-2xl md:text-xl">{item.label}</p>
+            </div>
           </div>
-          {/* content box */}
-          <div>
-            <p className="text-4xl text-black font-bold mb-2 md:text-3xl">
-              {item.number}
-            </p>
-            <p className="text-2xl md:text-1xl">{item.label}</p>
-          </div>
-        </div>
+          {/* if item has a border applu this (apply on all not last one) */}
+          {!item.noBorder && <div className="border-r-2 h-20 border-super-light">&nbsp;</div>}
+        </>
       ))}
     </div>
   );

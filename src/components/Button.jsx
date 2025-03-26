@@ -8,7 +8,7 @@ function Button({ children, border = false, type = 'normal', onClick }) {
   // if border is true that button has border and full rounded corner
   const borderBtn = border ? " border-1 rounded-full text-primary" : "";
   // if button type is cta button get background (primary-color) and suddle shadow
-  const typeBtn = type === 'cta' ? ' bg-primary text-white rounded-xl shadow-2xl shadow-red-500 px-25 py-6' : '';
+  const typeBtn = type === 'cta' ? ' bg-primary text-white rounded-xl shadow-2xl shadow-red-500 px-30 py-8' : '';
   // apply all button style approach in this constant
   const executeBtn = defaultBtn + borderBtn + typeBtn + menuBtn;
   // Hanlde onclick event from props :)
