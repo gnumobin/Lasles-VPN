@@ -17,7 +17,7 @@ function Features() {
           You can explore the features that we provide with fun and have their
           own functions each feature.
         </HeadBox>
-        <ul className="text-[1.4rem] space-y-5 grid lg:grid-cols-2 md:text-xl sm:flex sm:flex-col lg:pl-60 md:-ml-60">
+        <ul className="text-[1.4rem] space-y-5 grid lg:grid-cols-2 md:text-xl sm:flex sm:flex-col lg:pl-60 sm:-ml-60">
           <li className="flex items-center gap-3">
             <IoCheckmarkCircle size={24} className="text-secondary" />
             <span>Powerfull online protection.</span>

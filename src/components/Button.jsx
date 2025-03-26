@@ -11,7 +11,7 @@ function Button({ children, border = false, type = "normal", onClick, custom = '
   // if button type is cta button get background (primary-color) and suddle shadow
   const typeBtn =
     type === "cta"
-      ? " bg-primary text-white rounded-xl shadow-2xl shadow-red-500 px-30 py-8"
+      ? " bg-primary text-white rounded-xl shadow-2xl shadow-primary px-30 py-8"
       : "";
   // apply all button style approach in this constant
   const executeBtn = defaultBtn + borderBtn + typeBtn + menuBtn + custom;

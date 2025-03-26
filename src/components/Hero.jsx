@@ -14,7 +14,7 @@ function Hero() {
         <Button type={'cta'}>Get Started</Button>
     </div>
     {/* ImageBox */}
-    <div className='w-1/2 lg:w-2/3 lg:mb-20'>
+    <div className='w-1/2 lg:w-3/4 lg:mb-20'>
         <img className='w-full' src={HeroPicture} alt="a guy vector when he working with laptop" />
     </div>
   </section>

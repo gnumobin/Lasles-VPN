@@ -28,13 +28,13 @@ function DataBox() {
         <>
           <div className="flex gap-8 items-center md:gap-4">
             {/* icon box */}
-            <div className="bg-primary-light rounded-full p-4 flex items-center justify-center md:w-16 md:h-16 text-5xl md:text-3xl">
+            <div className="bg-primary-light rounded-full p-4 flex items-center justify-center md:w-16 md:h-16 text-5xl md:text-2xl">
               {/* icon */}
               {item.component}
             </div>
             {/* content box */}
             <div>
-              <p className="text-4xl text-black font-bold mb-2 md:text-2xl">
+              <p className="text-4xl text-black font-bold mb-1 md:text-xl">
                 {item.number}
               </p>
               <p className="text-2xl md:text-xl">{item.label}</p>

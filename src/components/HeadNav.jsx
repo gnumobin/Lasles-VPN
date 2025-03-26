@@ -58,7 +58,7 @@ function HeadNav() {
       {/* Mobile Menu: Button */}
       <div className="hidden lg:block relative z-30">
         <Button type="menu" onClick={showNavigationHandle}>
-          {showNavigation ? <IoMenu size={32} /> : <IoClose size={32} className="text-primary-light" />}
+          {showNavigation ? <IoMenu size={32} /> : <IoClose size={32} className="text-primary-light fixed top-12 right-12" />}
         </Button>
       </div>
     </nav>

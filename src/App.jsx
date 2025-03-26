@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import DataBox from './components/DataBox'
 import Features from './components/Features'
 import Cards from './components/Cards'
+import Map from './components/Map'
 
 function App() {
   return <div>
@@ -12,6 +13,7 @@ function App() {
     <DataBox />
     <Features />
     <Cards />
+    <Map />
   </div>
 }
 
