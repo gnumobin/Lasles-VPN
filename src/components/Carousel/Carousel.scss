@@ -15,6 +15,9 @@
     @media screen and (max-width: 64em) {
       flex: 0 0 66.6%;
     }
+    @media screen and (max-width: 48em) {
+      flex: 0 0 80%;
+    }
   }
 
   &__prev {
@@ -25,7 +28,8 @@
   &__next {
     background-color: var(--color-primary);
     border: 0.2rem solid var(--color-primary);
-    padding: 1.4rem;
+    color: white; 
+    padding: 1.2rem;
     border-radius: 999px;
     font-size: var(--text-5xl);
     cursor: pointer;

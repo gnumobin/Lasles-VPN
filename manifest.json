@@ -1,0 +1,10 @@
+{
+  "name": "LasLes VPN",
+  "icons": [
+    {
+      "src": "./public/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

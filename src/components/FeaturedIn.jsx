@@ -9,7 +9,7 @@ import SpotifyPicture from "../assets/social/spotify.png";
 function FeaturedIn() {
   return (
     <section>
-      <div className="container flex justify-between gap-10 items-center">
+      <div className="container flex justify-between gap-10 items-center sm:justify-center">
         <img src={NetflixPicture} alt="netflix logo" className="w-1/6" />
         <img src={RedditPicture} alt="reddit logo" className="w-1/6" />
         <img src={AmazonPicture} alt="amazon logo" className="w-1/6" />
