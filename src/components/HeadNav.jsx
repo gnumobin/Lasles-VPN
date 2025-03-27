@@ -17,7 +17,7 @@ function HeadNav() {
   const navItems = ["About", "Features", "Pricing", "Testimonials", "Help"];
   // navigation container styles
   const navContainer =
-    "w-full flex items-center justify-between fixed top-0 left-0 py-6 px-20 z-20 md:px-15";
+    "w-full flex items-center justify-between fixed top-0 left-0 py-6 px-20 z-20 md:px-15 border-gray-200 md:shadow-sm";
 
   return (
     <>

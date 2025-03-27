@@ -4,7 +4,7 @@ import "./Carousel.scss";
 import Testimonial from "../Testimonial/Testimonial";
 import { IoArrowBackSharp, IoArrowForward } from "react-icons/io5";
 
-export const Carousel = () => {
+export const Carousel = ({ children }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
 
   const scrollPrev = useCallback(() => {
@@ -19,15 +19,7 @@ export const Carousel = () => {
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          <div className="embla__slide">
-            <Testimonial active={true}/>
-          </div>
-          <div className="embla__slide">
-            <Testimonial />
-          </div>
-          <div className="embla__slide">
-            <Testimonial />
-          </div>
+          {children}
         </div>
       </div>
       <div className="flex items-center justify-between mt-15">
