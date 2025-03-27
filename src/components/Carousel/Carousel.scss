@@ -6,6 +6,9 @@
     display: flex;
     width: 100%;
     gap: 5rem;
+    @media screen and (max-width: 48em) {
+      gap: 3rem;
+    }
   }
 
   &__slide {
@@ -33,7 +36,7 @@
     border-radius: 999px;
     font-size: var(--text-5xl);
     cursor: pointer;
-    transition: .2s;
+    transition: 0.2s;
 
     &--disabled {
       background-color: white;

@@ -1,10 +1,11 @@
-import { IoMenu, IoClose } from "react-icons/io5";
+import { IoMenu, IoClose, IoBalloonSharp, IoPower } from "react-icons/io5";
 import { useState } from "react";
 import Button from "./Button";
 // Import assets
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo.svg";
 import Overlay from "./Overlay";
 import Humberger from "./Humberger/Hamberger";
+import UserPicture from "../assets/user/user-2.jpeg";
 
 function HeadNav() {
   const [active, setActive] = useState(false);
@@ -23,7 +24,7 @@ function HeadNav() {
   const navItems = ["About", "Features", "Pricing", "Testimonials", "Help"];
   // navigation container styles
   const navContainer =
-    "w-full flex items-center justify-between fixed top-0 left-0 py-6 px-20 z-20 md:px-15 border-gray-200 md:shadow-sm";
+    "w-full flex items-center justify-between fixed top-0 left-0 py-6 px-20 z-20 md:px-15 border-gray-200";
 
   return (
     <>
@@ -39,31 +40,48 @@ function HeadNav() {
         {/* Logo Box: First Item of Navigation-Container */}
         <div className="flex items-center gap-4">
           <img src={Logo} alt="website logo" />
-          {/* LogoBox Title */}
-          <span className="text-4xl font-medium text-black">
-            Lasles<strong className="font-extrabold">VPN</strong>
-          </span>
         </div>
         {/* List: Second Item of Navigation-Container */}
-        <ul
+        <div
           className={
             showNavigation
               ? navListStyles + " lg:-translate-x-350"
               : navListStyles + " lg:-translate-x-20"
           }
         >
-          {/* Render Navigation items from external data */}
-          {navItems.map((item, index) => (
-            <li className="lg:bg-white lg:p-8 rounded-lg" key={index}>
-              <a href="#">{item}</a>
-            </li>
-          ))}
+          <div className="hidden lg:flex items-center gap-6">
+            <div className="w-1/4 rounded-full">
+              <img
+                src={UserPicture}
+                alt="picture of logged-in user "
+                className="rounded-full"
+              />
+            </div>
+            <div className="space-y-5">
+              <p className="font-medium text-black text-3xl">Gnu Mobin</p>
+              <p className="text-xl flex gap-1 items-center">
+                <IoBalloonSharp className="text-secondary" />
+                <span className="uppercase">Online</span>
+              </p>
+            </div>
+            <div className="ml-auto cursor-pointer">
+              <IoPower size={28} className="text-primary"/>
+            </div>
+          </div>
+          <ul className="flex lg:flex-col gap-20 lg:gap-5">
+            {/* Render Navigation items from external data */}
+            {navItems.map((item, index) => (
+              <li className="lg:bg-white lg:p-8 rounded-lg" key={index}>
+                <a href="#">{item}</a>
+              </li>
+            ))}
+          </ul>
           {/* Buttons! But just show on smaller screens as list item */}
-          <li className="hidden lg:block text-center ">
+          <div className="hidden lg:block text-center ">
             <Button border={false}>Sign In</Button>
             <Button border={true}>Sign In</Button>
-          </li>
-        </ul>
+          </div>
+        </div>
         {/* Cta Buttons: Third Item of Navigation-Container */}
         <div className="lg:hidden">
           {/* Secondary Button */}

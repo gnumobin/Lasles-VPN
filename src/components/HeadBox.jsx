@@ -1,6 +1,9 @@
 import React from "react";
 
-function HeadBox({ children, title, sequence, direction = 'center' }) {
+function HeadBox({ children, title, sequence, direction = "center" }) {
+  //
+  const defaultDescriptionStyles =
+    "text-2xl md:text-[1.4rem] leading-11 mb-20 text-gray mx-auto md:w-full ";
   return (
     // set text-align with props
     <div className={`text-${direction}`}>
@@ -10,7 +13,13 @@ function HeadBox({ children, title, sequence, direction = 'center' }) {
         {title} <br /> {sequence}
       </h2>
       {/* description */}
-      <p className="text-2xl md:text-[1.4rem] leading-11 mb-20 text-gray w-1/2 mx-auto">
+      <p
+        className={
+          direction === "center"
+            ? defaultDescriptionStyles + "w-1/2"
+            : defaultDescriptionStyles
+        }
+      >
         {children}
       </p>
     </div>

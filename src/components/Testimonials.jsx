@@ -3,16 +3,16 @@ import HeadBox from "./HeadBox";
 import Testimonial from "./Testimonial";
 import Carousel from "./Carousel/Carousel";
 
-import FirstUserPicture from "../assets/user/user-1.png";
-import SecondUserPicture from "../assets/user/user-2.png";
+import FirstUserPicture from "../assets/user/user-1.jpg";
+import SecondUserPicture from "../assets/user/user-2.jpeg";
 import ThirdUserPicture from "../assets/user/user-3.png";
 
 function Testimonials() {
   const testimonials = [
     {
       picture: FirstUserPicture,
-      author: "Viezh Robert",
-      address: "Warsaw, Poland",
+      author: "Donald Trump",
+      address: "Washington, USA",
       quote:
         "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
       score: 4.5,
@@ -20,19 +20,19 @@ function Testimonials() {
     },
     {
       picture: SecondUserPicture,
-      author: "Yessica Christy",
-      address: "Shanxi, China",
+      author: "Gnu Mobin",
+      address: "Gorgan, Iran",
       quote:
-        "I like it because I like to travel far and still can connect with high speed.",
+        "Hey, I am the programmer of this website.",
       score: 4.5,
       active: false
     },
     {
       picture: ThirdUserPicture,
-      author: "Kim Young Jou",
-      address: "Seoul, South Korea",
+      author: "Yarify",
+      address: "Madrid, Spain",
       quote:
-        "This is very unusual for my business that currently requires a virtual private network that has high security.",
+        "I love Mobin, I'm willing to do anything to be with him.",
       score: 4.5,
       active: false
     },
