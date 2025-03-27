@@ -9,14 +9,14 @@
   }
 
   &__slide {
-    flex: 0 0 33.3%;
+    flex: 0 0 40%;
     min-width: 0;
 
     @media screen and (max-width: 64em) {
       flex: 0 0 66.6%;
     }
     @media screen and (max-width: 48em) {
-      flex: 0 0 80%;
+      flex: 0 0 88%;
     }
   }
 
@@ -33,6 +33,12 @@
     border-radius: 999px;
     font-size: var(--text-5xl);
     cursor: pointer;
+    transition: .2s;
+
+    &--disabled {
+      background-color: white;
+      color: var(--color-primary);
+    }
   }
 
   &__dots {

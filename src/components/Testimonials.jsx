@@ -1,6 +1,6 @@
 import React from "react";
 import HeadBox from "./HeadBox";
-import Testimonial from "./Testimonial/Testimonial";
+import Testimonial from "./Testimonial";
 import Carousel from "./Carousel/Carousel";
 
 import FirstUserPicture from "../assets/user/user-1.png";
@@ -16,6 +16,7 @@ function Testimonials() {
       quote:
         "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
       score: 4.5,
+      active: true
     },
     {
       picture: SecondUserPicture,
@@ -24,6 +25,7 @@ function Testimonials() {
       quote:
         "I like it because I like to travel far and still can connect with high speed.",
       score: 4.5,
+      active: false
     },
     {
       picture: ThirdUserPicture,
@@ -32,6 +34,7 @@ function Testimonials() {
       quote:
         "This is very unusual for my business that currently requires a virtual private network that has high security.",
       score: 4.5,
+      active: false
     },
   ];
 
@@ -42,16 +45,13 @@ function Testimonials() {
         pleasure when using this crazy feature.
       </HeadBox>
       <div className="flex gap-8">
-        <Carousel>
+        <Carousel total={testimonials.length}>
           {testimonials.map((testimonial, index) => (
             <div key={index} className="embla__slide">
-              <Testimonial data={testimonial} />
+              <Testimonial data={testimonial} active={testimonial.active}/>
             </div>
           ))}
         </Carousel>
-        {/* <Testimonal /> */}
-        {/* <Testimonal /> */}
-        {/* <Testimonal /> */}
       </div>
     </section>
   );

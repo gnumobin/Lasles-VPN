@@ -4,6 +4,7 @@ import Button from "./Button";
 // Import assets
 import Logo from "../assets/logo.png";
 import Overlay from "./Overlay";
+import Hamburger from "hamburger-react";
 
 function HeadNav() {
   // State of show menu
@@ -18,6 +19,8 @@ function HeadNav() {
   // navigation container styles
   const navContainer =
     "w-full flex items-center justify-between fixed top-0 left-0 py-6 px-20 z-20 md:px-15 border-gray-200 md:shadow-sm";
+  // Humberger Menu Btn
+  const [isOpen, setOpen] = useState(false);
 
   return (
     <>
@@ -37,8 +40,8 @@ function HeadNav() {
         <ul
           className={
             showNavigation
-              ? navListStyles + " -left-full"
-              : navListStyles + " left-0"
+              ? navListStyles + " lg:-translate-x-350"
+              : navListStyles + " lg:-translate-x-20"
           }
         >
           {/* Render Navigation items from external data */}
@@ -61,17 +64,15 @@ function HeadNav() {
           <Button border={true}>Sign Up</Button>
         </div>
         {/* Mobile Menu: Button */}
-        <div className="hidden lg:block relative z-30">
-          <Button type="menu" onClick={showNavigationHandle}>
-            {showNavigation ? (
-              <IoMenu size={32} />
-            ) : (
-              <IoClose
-                size={32}
-                className="text-primary-light fixed top-7 right-14"
-              />
-            )}
-          </Button>
+        <div
+          className="hidden lg:block relative z-30"
+          onClick={showNavigationHandle}
+        >
+          <Hamburger
+            toggled={isOpen}
+            toggle={setOpen}
+            color={isOpen ? "#f53838" : "#0b132a"}
+          />
         </div>
       </nav>
       {/* cover navigation height size casue nav is fixed position */}

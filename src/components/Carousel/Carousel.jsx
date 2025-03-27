@@ -1,11 +1,11 @@
-import React, { useCallback } from "react";
+import { useCallback, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import "./Carousel.scss";
-import Testimonial from "../Testimonial/Testimonial";
 import { IoArrowBackSharp, IoArrowForward } from "react-icons/io5";
 
-export const Carousel = ({ children }) => {
+export const Carousel = ({ children, total }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [count, setCount] = useState(1);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -15,12 +15,12 @@ export const Carousel = ({ children }) => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
+  console.log(count);
+
   return (
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
-          {children}
-        </div>
+        <div className="embla__container">{children}</div>
       </div>
       <div className="flex items-center justify-between mt-15">
         <div className="embla__dots">
@@ -29,13 +29,31 @@ export const Carousel = ({ children }) => {
           <div className="embla__dot">&nbsp;</div>
           <div className="embla__dot">&nbsp;</div>
         </div>
-        <div>
-          <button className="embla__prev" onClick={scrollPrev}>
-            <IoArrowBackSharp />
-          </button>
-          <button className="embla__next" onClick={scrollNext}>
-            <IoArrowForward />
-          </button>
+        <div className="flex">
+          <div onClick={() => setCount(count > 1 ? count - 1 : count)}>
+            <button
+              className={
+                count === 1
+                  ? "embla__prev embla__prev--disabled"
+                  : "embla__prev"
+              }
+              onClick={scrollPrev}
+            >
+              <IoArrowBackSharp />
+            </button>
+          </div>
+          <div onClick={() => setCount(count < total ? count + 1 : count)}>
+            <button
+              className={
+                count === total
+                  ? "embla__prev embla__prev--disabled"
+                  : "embla__prev"
+              }
+              onClick={scrollNext}
+            >
+              <IoArrowForward />
+            </button>
+          </div>
         </div>
       </div>
     </div>

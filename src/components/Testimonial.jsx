@@ -1,14 +1,13 @@
 // import assets
 import { IoStar } from "react-icons/io5";
-import "./Testimonial.scss";
 
 function Testimonial({ active, data }) {
   const { author, picture, quote, score, address } = data;
-  const containerBorderColor = active ? "primary" : "border";
+  const containerBorderColor = active ? "primary" : "[#dddddd]";
   const activeStyles = active ? "shadow-xl shadow-[rgba(13,16,37,0.1)]" : "";
   return (
     <figure
-      className={`border-2 border-${containerBorderColor} rounded-3xl p-10 space-y-5 ${activeStyles} h-full`}
+      className={`border-2 border-${containerBorderColor} rounded-3xl p-14 space-y-5 ${activeStyles} select-none h-full`}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-5">
@@ -23,7 +22,7 @@ function Testimonial({ active, data }) {
           <IoStar size={16} color="#FEA250" />
         </div>
       </div>
-      <figcaption className="text-black text-2xl leading-10">
+      <figcaption className="text-black text-2xl leading-10 select-text">
         {quote}
       </figcaption>
     </figure>

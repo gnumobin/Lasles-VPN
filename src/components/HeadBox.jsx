@@ -10,7 +10,7 @@ function HeadBox({ children, title, sequence, direction = 'center' }) {
         {title} <br /> {sequence}
       </h2>
       {/* description */}
-      <p className="text-2xl md:text-[1.4rem] leading-11 mb-20">
+      <p className="text-2xl md:text-[1.4rem] leading-11 mb-20 text-gray w-1/2 mx-auto">
         {children}
       </p>
     </div>
