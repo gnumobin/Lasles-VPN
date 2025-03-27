@@ -20,7 +20,7 @@ export const Carousel = () => {
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           <div className="embla__slide">
-            <Testimonial />
+            <Testimonial active={true}/>
           </div>
           <div className="embla__slide">
             <Testimonial />
@@ -31,7 +31,12 @@ export const Carousel = () => {
         </div>
       </div>
       <div className="flex items-center justify-between mt-15">
-        <div>&nbsp;</div>
+        <div className="embla__dots">
+          <div className="embla__dot embla__dot--active">&nbsp;</div>
+          <div className="embla__dot">&nbsp;</div>
+          <div className="embla__dot">&nbsp;</div>
+          <div className="embla__dot">&nbsp;</div>
+        </div>
         <div>
           <button className="embla__prev" onClick={scrollPrev}>
             <IoArrowBackSharp />

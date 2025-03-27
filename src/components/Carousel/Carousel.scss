@@ -21,17 +21,36 @@
   }
 
   &__prev {
-    margin-right: 1rem;
+    margin-right: 2rem;
   }
 
   &__prev,
   &__next {
     background-color: var(--color-primary);
     border: 0.2rem solid var(--color-primary);
-    color: white; 
+    color: white;
     padding: 1.2rem;
     border-radius: 999px;
     font-size: var(--text-5xl);
     cursor: pointer;
+  }
+
+  &__dots {
+    display: flex;
+    gap: 1.5rem;
+    user-select: none;
+  }
+
+  &__dot {
+    background-color: #dde0e4;
+    border-radius: 999px;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+
+    &--active {
+      background: var(--color-primary);
+      width: 4.5rem;
+    }
   }
 }

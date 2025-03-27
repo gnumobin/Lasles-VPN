@@ -50,4 +50,8 @@ button {
       transform: translateY(25%);
     }
   }
+
+  &__item--empty::before {
+    // background-image: ;
+  }
 }
