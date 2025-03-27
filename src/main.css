@@ -15,10 +15,13 @@
   --color-secondary: #2fab73;
   --color-gray: #4f5665;
   --color-black: #0b132a;
-  --color-background: #F6F6F6;
+  --color-background: #f6f6f6;
+  --color-border: #dddddd;
   /* Font Sizes */
   --text-xl: 1.4rem;
   --text-2xl: 1.6rem;
+  /* Radiuses */
+  --rounded-3xl: 1rem;
 }
 /* Change Default styles for container */
 @utility container {
@@ -26,60 +29,4 @@
   padding-bottom: 6rem;
   max-width: 128rem;
   margin: 0 auto;
-}
-/* Global reset */
-html {
-  font-size: 62.5%;
-}
-body {
-  font-family: "Rubik", sans-serif;
-  color: var(--color-gray);
-}
-img,
-button {
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-/* Global media queries */
-@media (max-width: 80em) {
-  html {
-    font-size: 60%;
-  }
-}
-
-@media (max-width: 64em) {
-  html {
-    font-size: 55%;
-  }
-}
-
-@media (max-width: 48em) {
-  html {
-    font-size: 50%;
-  }
-}
-
-/* List Component */
-.list {
-  margin-bottom: 12rem;
-}
-.list .list__item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  position: relative;
-  width: 70%;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-}
-.list .list__item::before {
-  content: "";
-  display: inline-block;
-  width: 1.4rem;
-  height: 1.4rem;
-  background-image: url(./assets/chekmark.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: translateY(25%);
 }

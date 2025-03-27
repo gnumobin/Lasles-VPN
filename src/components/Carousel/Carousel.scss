@@ -1,0 +1,33 @@
+.embla {
+  overflow: hidden;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    width: 100%;
+    gap: 5rem;
+  }
+
+  &__slide {
+    flex: 0 0 33.3%;
+    min-width: 0;
+
+    @media screen and (max-width: 64em) {
+      flex: 0 0 66.6%;
+    }
+  }
+
+  &__prev {
+    margin-right: 1rem;
+  }
+
+  &__prev,
+  &__next {
+    background-color: var(--color-primary);
+    border: 0.2rem solid var(--color-primary);
+    padding: 1.4rem;
+    border-radius: 999px;
+    font-size: var(--text-5xl);
+    cursor: pointer;
+  }
+}

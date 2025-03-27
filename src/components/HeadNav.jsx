@@ -42,8 +42,8 @@ function HeadNav() {
           }
         >
           {/* Render Navigation items from external data */}
-          {navItems.map((item) => (
-            <li className="lg:bg-white lg:p-8 rounded-lg">
+          {navItems.map((item, index) => (
+            <li className="lg:bg-white lg:p-8 rounded-lg" key={index}>
               <a href="#">{item}</a>
             </li>
           ))}
