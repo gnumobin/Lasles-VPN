@@ -18,50 +18,59 @@ function HeadNav() {
 
   return (
     <>
-    <Overlay show={showNavigation} state={setShowNavigation}/>
-    <nav className="container flex items-center justify-between">
-      {/* Logo Box: First Item of Navigation-Container */}
-      <div className="flex items-center gap-4">
-        <img src={Logo} alt="website logo" />
-        {/* LogoBox Title */}
-        <span className="text-4xl font-medium text-black">
-          Lasles<strong className="font-extrabold">VPN</strong>
-        </span>
-      </div>
-      {/* List: Second Item of Navigation-Container */}
-      <ul
-        className={
-          showNavigation
-            ? navListStyles + " -left-full"
-            : navListStyles + " left-0"
-        }
-      >
-        {/* Render Navigation items from external data */}
-        {navItems.map((item) => (
-          <li className="lg:bg-white lg:p-8 rounded-lg">
-            <a href="#">{item}</a>
+      <Overlay show={showNavigation} state={setShowNavigation} />
+      <nav className="w-full flex items-center justify-between fixed top-0 left-0 bg-white py-6 px-22 z-50">
+        {/* Logo Box: First Item of Navigation-Container */}
+        <div className="flex items-center gap-4">
+          <img src={Logo} alt="website logo" />
+          {/* LogoBox Title */}
+          <span className="text-4xl font-medium text-black">
+            Lasles<strong className="font-extrabold">VPN</strong>
+          </span>
+        </div>
+        {/* List: Second Item of Navigation-Container */}
+        <ul
+          className={
+            showNavigation
+              ? navListStyles + " -left-full"
+              : navListStyles + " left-0"
+          }
+        >
+          {/* Render Navigation items from external data */}
+          {navItems.map((item) => (
+            <li className="lg:bg-white lg:p-8 rounded-lg">
+              <a href="#">{item}</a>
+            </li>
+          ))}
+          {/* Buttons! But just show on smaller screens as list item */}
+          <li className="hidden lg:block text-center ">
+            <Button border={false}>Sign In</Button>
+            <Button border={true}>Sign In</Button>
           </li>
-        ))}
-        {/* Buttons! But just show on smaller screens as list item */}
-        <li className="hidden lg:block text-center ">
+        </ul>
+        {/* Cta Buttons: Third Item of Navigation-Container */}
+        <div className="lg:hidden">
+          {/* Secondary Button */}
           <Button border={false}>Sign In</Button>
-          <Button border={true}>Sign In</Button>
-        </li>
-      </ul>
-      {/* Cta Buttons: Third Item of Navigation-Container */}
-      <div className="lg:hidden">
-        {/* Secondary Button */}
-        <Button border={false}>Sign In</Button>
-        {/* Primary Button */}
-        <Button border={true}>Sign Up</Button>
-      </div>
-      {/* Mobile Menu: Button */}
-      <div className="hidden lg:block relative z-30">
-        <Button type="menu" onClick={showNavigationHandle}>
-          {showNavigation ? <IoMenu size={32} /> : <IoClose size={32} className="text-primary-light fixed top-12 right-12" />}
-        </Button>
-      </div>
-    </nav>
+          {/* Primary Button */}
+          <Button border={true}>Sign Up</Button>
+        </div>
+        {/* Mobile Menu: Button */}
+        <div className="hidden lg:block relative z-30">
+          <Button type="menu" onClick={showNavigationHandle}>
+            {showNavigation ? (
+              <IoMenu size={32} />
+            ) : (
+              <IoClose
+                size={32}
+                className="text-primary-light fixed top-12 right-12"
+              />
+            )}
+          </Button>
+        </div>
+      </nav>
+      {/* cover navigation height size casue nav is fixed position */}
+      <div className="mt-30">&nbsp;</div>
     </>
   );
 }

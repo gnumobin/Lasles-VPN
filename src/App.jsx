@@ -15,7 +15,7 @@ function App() {
     <Features />
     <Cards />
     <Map />
-    {/* <FeaturedIn /> */}
+    <FeaturedIn />
   </div>
 }
 
