@@ -9,14 +9,12 @@ import SpotifyPicture from "../assets/social/spotify.png";
 function FeaturedIn() {
   return (
     <section>
-      <div className="container grid grid-cols-5 items-center mx-auto  md:grid-cols-3">
-        <img src={NetflixPicture} alt="netflix logo" className="w-2/3" />
-        <img src={RedditPicture} alt="reddit logo" className="w-2/3" />
-        <img src={AmazonPicture} alt="amazon logo" className="w-2/3" />
-        <div className="flex gap-30 mx-auto md:w-2/3 md:col-start-1 md:col-end-3">
-          <img src={DiscordPicture} alt="discord logo" className="w-2/3" />
-          <img src={SpotifyPicture} alt="spotify logo" className="w-2/3" />
-        </div>
+      <div className="container flex justify-between gap-10 items-center">
+        <img src={NetflixPicture} alt="netflix logo" className="w-1/6" />
+        <img src={RedditPicture} alt="reddit logo" className="w-1/6" />
+        <img src={AmazonPicture} alt="amazon logo" className="w-1/6" />
+        <img src={DiscordPicture} alt="discord logo" className="w-1/6" />
+        <img src={SpotifyPicture} alt="spotify logo" className="w-1/6" />
       </div>
     </section>
   );

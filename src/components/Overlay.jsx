@@ -4,7 +4,7 @@ function Overlay({ show, state }) {
   return (
     <>
       {!show && (
-        <div className="h-full w-full fixed bg-black opacity-75 z-10" onClick={() => state(!show)}>
+        <div className="h-full w-full fixed bg-black opacity-75 z-15 -mt-30" onClick={() => state(!show)}>
           &nbsp;
         </div>
       )}

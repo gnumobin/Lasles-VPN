@@ -6,6 +6,7 @@ import Features from './components/Features'
 import Cards from './components/Cards'
 import Map from './components/Map'
 import FeaturedIn from './components/FeaturedIn'
+import Testimonials from './components/Testimonials'
 
 function App() {
   return <div>
@@ -16,6 +17,7 @@ function App() {
     <Cards />
     <Map />
     <FeaturedIn />
+    <Testimonials />
   </div>
 }
 

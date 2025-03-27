@@ -12,14 +12,19 @@ function HeadNav() {
   const showNavigationHandle = () => setShowNavigation(!showNavigation);
   // Duplicate Styles for navigation list (ul tag)
   const navListStyles =
-    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col h-full top-0 lg:w-2/3 lg:bg-gray-100 lg:border-r border-gray-400 lg:p-10 ease-in-out duration-400 z-20";
+    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col h-full top-0 lg:w-2/3 lg:bg-gray-100 lg:p-10 cubic-bezier(.22,-0.21,.21,1.42) duration-500 z-20";
   // Navigation Items Array
   const navItems = ["About", "Features", "Pricing", "Testimonials", "Help"];
+  // navigation container styles
+  const navContainer =
+    "w-full flex items-center justify-between fixed top-0 left-0 py-6 px-20 z-20 md:px-15";
 
   return (
     <>
       <Overlay show={showNavigation} state={setShowNavigation} />
-      <nav className="w-full flex items-center justify-between fixed top-0 left-0 bg-white py-6 px-22 z-50">
+      <nav
+        className={showNavigation ? `${navContainer} bg-white` : navContainer}
+      >
         {/* Logo Box: First Item of Navigation-Container */}
         <div className="flex items-center gap-4">
           <img src={Logo} alt="website logo" />
@@ -63,7 +68,7 @@ function HeadNav() {
             ) : (
               <IoClose
                 size={32}
-                className="text-primary-light fixed top-12 right-12"
+                className="text-primary-light fixed top-7 right-14"
               />
             )}
           </Button>
