@@ -15,7 +15,7 @@ export const Carousel = ({ children, total }) => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  console.log(count);
+  const totalArray = Array(total).fill("Yoohoo!", 0);
 
   return (
     <div className="embla">
@@ -24,10 +24,19 @@ export const Carousel = ({ children, total }) => {
       </div>
       <div className="flex items-center justify-between mt-15">
         <div className="embla__dots">
-          <div className="embla__dot embla__dot--active">&nbsp;</div>
-          <div className="embla__dot">&nbsp;</div>
-          <div className="embla__dot">&nbsp;</div>
-          <div className="embla__dot">&nbsp;</div>
+          {totalArray.map((_, index) => (
+            <div
+              key={index}
+              className={
+                count === index + 1
+                  ? "embla__dot embla__dot--active"
+                  : "embla__dot embla__dot"
+              }
+            >
+              &nbsp;
+            </div>
+          ))}
+          {/* <div className="embla__dot embla__dot--active">&nbsp;</div> */}
         </div>
         <div className="flex">
           <div onClick={() => setCount(count > 1 ? count - 1 : count)}>

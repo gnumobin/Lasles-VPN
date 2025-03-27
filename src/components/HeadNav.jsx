@@ -4,13 +4,18 @@ import Button from "./Button";
 // Import assets
 import Logo from "../assets/logo.png";
 import Overlay from "./Overlay";
-import Hamburger from "hamburger-react";
+import Humberger from "./Humberger/Hamberger";
 
 function HeadNav() {
+  const [active, setActive] = useState(false);
+
   // State of show menu
   const [showNavigation, setShowNavigation] = useState(true);
   // Handle Show menu for smaller screens
-  const showNavigationHandle = () => setShowNavigation(!showNavigation);
+  const showNavigationHandle = () => {
+    setShowNavigation(!showNavigation);
+    setActive(!active);
+  };
   // Duplicate Styles for navigation list (ul tag)
   const navListStyles =
     "flex gap-[4rem] text-2xl lg:fixed lg:flex-col h-full top-0 lg:w-2/3 lg:bg-gray-100 lg:p-10 cubic-bezier(.22,-0.21,.21,1.42) duration-500 z-20";
@@ -19,12 +24,15 @@ function HeadNav() {
   // navigation container styles
   const navContainer =
     "w-full flex items-center justify-between fixed top-0 left-0 py-6 px-20 z-20 md:px-15 border-gray-200 md:shadow-sm";
-  // Humberger Menu Btn
-  const [isOpen, setOpen] = useState(false);
 
   return (
     <>
-      <Overlay show={showNavigation} state={setShowNavigation} />
+      <Overlay
+        show={showNavigation}
+        state={setShowNavigation}
+        active={active}
+        setActive={setActive}
+      />
       <nav
         className={showNavigation ? `${navContainer} bg-white` : navContainer}
       >
@@ -64,15 +72,8 @@ function HeadNav() {
           <Button border={true}>Sign Up</Button>
         </div>
         {/* Mobile Menu: Button */}
-        <div
-          className="hidden lg:block relative z-30"
-          onClick={showNavigationHandle}
-        >
-          <Hamburger
-            toggled={isOpen}
-            toggle={setOpen}
-            color={isOpen ? "#f53838" : "#0b132a"}
-          />
+        <div onClick={showNavigationHandle} className="hidden lg:block">
+          <Humberger active={active} />
         </div>
       </nav>
       {/* cover navigation height size casue nav is fixed position */}
