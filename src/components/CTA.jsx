@@ -4,7 +4,7 @@ import Button from "./Button";
 
 function CTA() {
   return (
-    <section className="container absolute -top-[60%] translate-y-1/2">
+    <section className="container absolute -top-[60%] translate-y-1/2 left-1/2 -translate-x-1/2 md:-top-[42.5%] sm:translate-y-[75%]">
       <div className="flex justify-between items-center shadow-2xl p-15 rounded-3xl bg-white px-25 md:flex-col">
         <HeadBox
           title={"Subscribe Now for"}
