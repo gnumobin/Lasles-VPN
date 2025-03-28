@@ -4,8 +4,8 @@ import Button from "./Button";
 
 function CTA() {
   return (
-    <section className="container">
-      <div className="flex justify-between items-center shadow-2xl p-12 rounded-3xl">
+    <section className="container absolute -top-[60%] translate-y-1/2">
+      <div className="flex justify-between items-center shadow-2xl p-15 rounded-3xl bg-white px-25 md:flex-col">
         <HeadBox
           title={"Subscribe Now for"}
           sequence={"Get Special Features!"}
@@ -13,11 +13,7 @@ function CTA() {
         >
           Let's subscribe with us and find the fun.
         </HeadBox>
-        {/* <h2 className="text-black font-medium text-6xl">
-        Subscribe Now for Get Special Features!
-      </h2>
-      <p>Let's subscribe with us and find the fun.</p>
-      <button>Subscribe Now</button> */}
+
         <Button type="cta" custom="h-25">
           Subscribe Now
         </Button>
