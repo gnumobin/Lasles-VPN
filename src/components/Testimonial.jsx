@@ -34,7 +34,7 @@ function Testimonial({ active, data }) {
           <IoStar size={16} color="#FEA250" />
         </div>
       </div>
-      <figcaption className="text-black text-2xl leading-10 select-text">
+      <figcaption className="text-black text-2xl leading-14 select-text">
         {quote}
       </figcaption>
     </figure>

@@ -1,16 +1,11 @@
 import React from "react";
 import Logo from "../assets/logo.svg";
-import {
-  IoLogoFacebook,
-  IoLogoInstagram,
-  IoLogoTwitter,
-} from "react-icons/io5";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
 function Footer() {
   return (
     <footer className="bg-background pt-85 md:pt-95">
-      <div className="container flex justify-between md:flex-col gap-30">
+      <div className="container flex justify-between md:flex-col-reverse gap-30">
         <div className="space-y-15 w-1/3 md:w-full">
           <img src={Logo} alt="website logo" />
           <p className="text-2xl leading-11 -mt-5">

@@ -23,7 +23,7 @@ function DataBox() {
     },
   ];
   return (
-    <div className="flex justify-between p-16 mt-8 mx-auto shadow-2xl shadow-[rgba(13,16,37,0.1)] mb-10 rounded-3xl w-4/5 items-center md:w-[90%] sm:px-8 py-14 container">
+    <div className="flex justify-around md:justify-between p-16 mt-8 mx-auto shadow-2xl shadow-[rgba(13,16,37,0.1)] mb-10 rounded-3xl w-4/5 items-center md:w-[90%] sm:px-8 py-14 container">
       {/* Render data items from array */}
       {items.map((item, index) => (
         <Fragment key={index}>

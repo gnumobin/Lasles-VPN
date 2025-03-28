@@ -29,23 +29,21 @@
   stroke-linecap: round;
 }
 
-.ham3 .top {
-  stroke-dasharray: 40 130;
+.ham6 .top {
+  stroke-dasharray: 40 172;
 }
-.ham3 .middle {
-  stroke-dasharray: 40 140;
+.ham6 .middle {
+  stroke-dasharray: 40 111;
 }
-.ham3 .bottom {
-  stroke-dasharray: 40 205;
+.ham6 .bottom {
+  stroke-dasharray: 40 172;
 }
-.ham3.active .top {
-  stroke-dasharray: 75 130;
-  stroke-dashoffset: -63px;
+.ham6.active .top {
+  stroke-dashoffset: -132px;
 }
-.ham3.active .middle {
-  stroke-dashoffset: -102px;
+.ham6.active .middle {
+  stroke-dashoffset: -71px;
 }
-.ham3.active .bottom {
-  stroke-dasharray: 110 205;
-  stroke-dashoffset: -86px;
+.ham6.active .bottom {
+  stroke-dashoffset: -132px;
 }

@@ -1,14 +1,23 @@
 import { IoMenu, IoClose, IoBalloonSharp, IoPower } from "react-icons/io5";
 import { useState } from "react";
-import Button from "./Button";
+import Button from "./Button/Button";
 // Import assets
 import Logo from "../assets/logo.svg";
 import Overlay from "./Overlay";
 import Humberger from "./Humberger/Hamberger";
 import UserPicture from "../assets/user/user-2.jpeg";
+import { useEffect } from "react";
 
 function HeadNav() {
   const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    if (active) {
+      document.querySelector("body").classList.add("overflow-hidden");
+    } else {
+      document.querySelector("body").classList.remove("overflow-hidden");
+    }
+  }, [active]);
 
   // State of show menu
   const [showNavigation, setShowNavigation] = useState(true);
@@ -19,12 +28,12 @@ function HeadNav() {
   };
   // Duplicate Styles for navigation list (ul tag)
   const navListStyles =
-    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col h-full top-0 lg:w-2/3 lg:bg-gray-100 lg:p-10 cubic-bezier(.22,-0.21,.21,1.42) duration-500 z-20";
+    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col h-full top-0 lg:w-2/3 lg:bg-gray-100 lg:p-10 cubic-bezier(.22,-0.21,.21,1.42) duration-500 z-20 rounded-t-3xl rounded-b-3xl";
   // Navigation Items Array
   const navItems = ["About", "Features", "Pricing", "Testimonials", "Help"];
   // navigation container styles
   const navContainer =
-    "w-full flex items-center justify-between fixed top-0 left-0 py-6 px-20 z-20 md:px-15 border-gray-200";
+    "w-full flex items-center justify-between fixed top-0 left-0 py-6 px-20 z-20 md:px-15 border-gray-200 ";
 
   return (
     <>
@@ -38,7 +47,7 @@ function HeadNav() {
         className={showNavigation ? `${navContainer} bg-white` : navContainer}
       >
         {/* Logo Box: First Item of Navigation-Container */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 ">
           <img src={Logo} alt="website logo" />
         </div>
         {/* List: Second Item of Navigation-Container */}
@@ -65,13 +74,16 @@ function HeadNav() {
               </p>
             </div>
             <div className="ml-auto cursor-pointer">
-              <IoPower size={28} className="text-primary"/>
+              <IoPower size={28} className="text-primary" />
             </div>
           </div>
           <ul className="flex lg:flex-col gap-20 lg:gap-5">
             {/* Render Navigation items from external data */}
             {navItems.map((item, index) => (
-              <li className="lg:bg-white lg:p-8 rounded-lg" key={index}>
+              <li
+                className="lg:bg-white lg:p-8 rounded-lg hover:text-black duration-200"
+                key={index}
+              >
                 <a href="#">{item}</a>
               </li>
             ))}

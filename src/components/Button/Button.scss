@@ -1,0 +1,15 @@
+.button {
+    transition: .2s;
+    &__animation {
+        &:hover {
+            scale: 1;
+        }
+    }
+    &:hover {
+        color: white;
+        border: 2px solid #f53838;
+        span {
+            scale: 6;
+        }
+    }
+}

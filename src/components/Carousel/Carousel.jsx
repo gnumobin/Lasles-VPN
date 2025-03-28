@@ -1,71 +1,37 @@
-import { useCallback, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
 import "./Carousel.scss";
 import { IoArrowBackSharp, IoArrowForward } from "react-icons/io5";
 
-export const Carousel = ({ children, total }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel();
-  const [count, setCount] = useState(1);
+// import Swiper core and required modules
+import { Navigation, Pagination, A11y } from "swiper/modules";
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
+import { Swiper, } from "swiper/react";
 
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { useState } from "react";
 
-  const totalArray = Array(total).fill("Yoohoo!", 0);
+export const Carousel = ({ children }) => {
+  const [wWidth, setWWidth] = useState(window.innerWidth);
+
+  window.addEventListener("resize", (e) => {
+    setWWidth(e.target.innerWidth);
+  });
 
   return (
-    <div className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">{children}</div>
-      </div>
-      <div className="flex items-center justify-between mt-15">
-        <div className="embla__dots">
-          {totalArray.map((_, index) => (
-            <div
-              key={index}
-              className={
-                count === index + 1
-                  ? "embla__dot embla__dot--active"
-                  : "embla__dot embla__dot"
-              }
-            >
-              &nbsp;
-            </div>
-          ))}
-          {/* <div className="embla__dot embla__dot--active">&nbsp;</div> */}
-        </div>
-        <div className="flex">
-          <div onClick={() => setCount(count > 1 ? count - 1 : count)}>
-            <button
-              className={
-                count === 1
-                  ? "embla__prev embla__prev--disabled"
-                  : "embla__prev"
-              }
-              onClick={scrollPrev}
-            >
-              <IoArrowBackSharp />
-            </button>
-          </div>
-          <div onClick={() => setCount(count < total ? count + 1 : count)}>
-            <button
-              className={
-                count === total
-                  ? "embla__prev embla__prev--disabled"
-                  : "embla__prev"
-              }
-              onClick={scrollNext}
-            >
-              <IoArrowForward />
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <Swiper
+        className="mb-70 relative"
+        // install Swiper modules
+        modules={[Navigation, Pagination, A11y]}
+        spaceBetween={30}
+        slidesPerView={wWidth > 900 ? 2.5 : 1}
+        navigation
+      >
+        {children}
+      </Swiper>
+    </>
   );
 };
 

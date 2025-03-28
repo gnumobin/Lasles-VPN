@@ -6,6 +6,7 @@ import Carousel from "./Carousel/Carousel";
 import FirstUserPicture from "../assets/user/user-1.jpg";
 import SecondUserPicture from "../assets/user/user-2.jpeg";
 import ThirdUserPicture from "../assets/user/user-3.png";
+import { SwiperSlide } from "swiper/react";
 
 function Testimonials() {
   const testimonials = [
@@ -16,25 +17,31 @@ function Testimonials() {
       quote:
         "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
       score: 4.5,
-      active: true
+      active: true,
     },
     {
       picture: SecondUserPicture,
       author: "Gnu Mobin",
       address: "Gorgan, Iran",
-      quote:
-        "Hey, I am the programmer of this website.",
+      quote: "Hey, I am the programmer of this website.",
       score: 4.5,
-      active: false
+      active: false,
     },
     {
       picture: ThirdUserPicture,
       author: "Yarify",
       address: "Madrid, Spain",
-      quote:
-        "I love Mobin, I'm willing to do anything to be with him.",
+      quote: "I love Mobin, I'm willing to do anything to be with him.",
       score: 4.5,
-      active: false
+      active: false,
+    },
+    {
+      picture: ThirdUserPicture,
+      author: "Yarify",
+      address: "Madrid, Spain",
+      quote: "I love Mobin, I'm willing to do anything to be with him.",
+      score: 4.5,
+      active: false,
     },
   ];
 
@@ -47,9 +54,9 @@ function Testimonials() {
       <div className="flex gap-8">
         <Carousel total={testimonials.length}>
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="embla__slide">
-              <Testimonial data={testimonial} active={testimonial.active}/>
-            </div>
+            <SwiperSlide key={index}>
+              <Testimonial data={testimonial} active={testimonial.active} />
+            </SwiperSlide>
           ))}
         </Carousel>
       </div>
