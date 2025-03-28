@@ -1,15 +1,56 @@
-.button {
-    transition: .2s;
-    &__animation {
-        &:hover {
-            scale: 1;
-        }
-    }
+.border-animated {
+  overflow: hidden;
+  transition: 0.2s;
+  &__animation {
     &:hover {
-        color: white;
-        border: 2px solid #f53838;
-        span {
-            scale: 6;
-        }
+      scale: 1;
     }
+  }
+  &:hover {
+    color: white;
+    border: 2px solid #f53838;
+    span {
+      scale: 6;
+    }
+  }
+}
+
+.cta-animted {
+  transition: 0.2s;
+
+  &::after, &::before {
+    transition: transform 0.3s, opacity .6s;
+    content: "";
+    transform: scale(0.5);
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &::before {
+    border: 2px solid #f53838;
+    transform: scale(0);
+  }
+
+  &::after {
+    background-color: #f53838;
+  }
+
+  &:hover {
+    color: #0b132a;
+    background-color: transparent;
+    box-shadow: 0 3rem 4rem rgba(245, 56, 56, 0.3);
+  }
+
+  &:hover::before {
+    transform: scale(1);
+  }
+  &:hover::after {
+    transform: scaleX(1.2) scaleY(1.6);
+    opacity: 0;
+  }
 }

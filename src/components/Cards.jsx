@@ -1,5 +1,5 @@
 import HeadBox from "./HeadBox";
-import Card from "./Card/Card";
+import Card from "./Card";
 
 function Cards() {
   const cards = [
