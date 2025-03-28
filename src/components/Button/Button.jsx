@@ -7,6 +7,8 @@ function Button({
   type = "normal",
   onClick,
   custom = "",
+  link = true,
+  scale = false,
 }) {
   // Default styles for button
   const defaultBtn =
@@ -17,7 +19,7 @@ function Button({
   // if border is true that button has border and full rounded corner
   const borderBtn = border
     ? " border-2 rounded-full text-primary border-animated"
-    : " ";
+    : " second ";
   // if button type is cta button get background (primary-color) and suddle shadow
   const typeBtn =
     type === "cta"
@@ -28,15 +30,33 @@ function Button({
     type === "shop"
       ? " block w-2/3 text-4xl border-2 rounded-full mx-auto "
       : " ";
+  const scaleAnimation = scale ? " border-animated " : "";
   // apply all button style approach in this constant
   const executeBtn =
-    defaultBtn + borderBtn + typeBtn + menuBtn + shopBtn + custom + " button";
+    defaultBtn +
+    borderBtn +
+    typeBtn +
+    menuBtn +
+    shopBtn +
+    scaleAnimation +
+    custom +
+    " button";
   // Hanlde onclick event from props :)
+  const eventHandle = (e) => {
+    if (link) {
+      e.preventDefault();
+    }
+    onClick && onClick();
+  };
   return (
-    <button className={executeBtn} onClick={onClick}>
+    <a
+      href="#"
+      className={"inline-block active:translate-y-2 " + executeBtn}
+      onClick={eventHandle}
+    >
       {children}
       <span className="w-1/3 h-full bg-primary absolute top-1/2 left-1/2 rounded-full -translate-1/2 scale-0 duration-300 button__animation -z-1"></span>
-    </button>
+    </a>
   );
 }
 

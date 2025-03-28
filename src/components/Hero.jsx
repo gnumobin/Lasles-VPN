@@ -18,7 +18,9 @@ function Hero() {
           <strong>LaslesVPN</strong> discover interesting features from us.
         </p>
         {/* Call to action button (from custom component) */}
-        <Button type={"cta"}>Get Started</Button>
+        <Button type={"cta"} link={true}>
+        Get Started
+        </Button>
       </div>
       {/* ImageBox */}
       <div className="w-1/2 lg:w-3/4 lg:mb-20">

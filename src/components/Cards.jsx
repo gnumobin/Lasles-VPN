@@ -52,7 +52,7 @@ function Cards() {
         cheerfully.
       </HeadBox>
       {/* Cards container */}
-      <div className="grid gap-40 mt-10 grid-cols-3 xl:gap-15 sm:grid-cols-1">
+      <div className="grid gap-40 mt-10 grid-cols-3 xl:gap-15 lg:grid-cols-2 sm:flex sm:flex-col">
         {cards.map((card, index) => (
           <Card data={card} key={index} active={card.active} />
         ))}

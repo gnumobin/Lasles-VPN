@@ -52,6 +52,8 @@ function Card({ active, data }) {
               ? "bg-primary text-white shadow-2xl shadow-primary border-primary"
               : "text-primary"
           }
+          scale={true}
+          border={true}
         >
           Select
         </Button>

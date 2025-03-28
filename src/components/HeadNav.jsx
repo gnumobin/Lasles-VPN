@@ -91,15 +91,15 @@ function HeadNav() {
           {/* Buttons! But just show on smaller screens as list item */}
           <div className="hidden lg:block text-center ">
             <Button border={false}>Sign In</Button>
-            <Button border={true}>Sign In</Button>
+            <Button border={true}>Sign Up</Button>
           </div>
         </div>
         {/* Cta Buttons: Third Item of Navigation-Container */}
         <div className="lg:hidden">
           {/* Secondary Button */}
-          <Button border={false}>Sign In</Button>
+          <Button border={false} scale={true}>Sign In</Button>
           {/* Primary Button */}
-          <Button border={true}>Sign Up</Button>
+          <Button border={true} scale={true}>Sign Up</Button>
         </div>
         {/* Mobile Menu: Button */}
         <div onClick={showNavigationHandle} className="hidden lg:block">

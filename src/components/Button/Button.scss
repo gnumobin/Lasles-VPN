@@ -1,6 +1,8 @@
 .border-animated {
   overflow: hidden;
   transition: 0.2s;
+  border-radius: 999px;
+
   &__animation {
     &:hover {
       scale: 1;
@@ -8,18 +10,26 @@
   }
   &:hover {
     color: white;
-    border: 2px solid #f53838;
+    border: 2px solid #dc2323 ;
     span {
       scale: 6;
     }
   }
 }
 
+.border-animated.second {
+  border: 2px solid transparent;
+  &:hover {
+    border: 2px solid #f53838;
+  }
+}
+
 .cta-animted {
   transition: 0.2s;
 
-  &::after, &::before {
-    transition: transform 0.3s, opacity .6s;
+  &::after,
+  &::before {
+    transition: transform 0.3s, opacity 0.6s;
     content: "";
     transform: scale(0.5);
     border-radius: 1rem;
@@ -52,5 +62,12 @@
   &:hover::after {
     transform: scaleX(1.2) scaleY(1.6);
     opacity: 0;
+  }
+  &:active {
+    color: white;
+  }
+  &:active::after {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
   }
 }
