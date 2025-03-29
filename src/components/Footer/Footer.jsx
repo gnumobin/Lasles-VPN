@@ -1,6 +1,7 @@
 import React from "react";
-import Logo from "../assets/logo.svg";
+import Logo from "../../assets/logo.svg";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import './Footer.scss'
 
 function Footer() {
   return (
@@ -15,21 +16,24 @@ function Footer() {
           <div className="flex gap-10">
             <a
               href="#"
-              className="flex bg-white p-3 rounded-full justify-center items-center"
+              className="flex bg-white p-3 rounded-full justify-center items-center duration-200 text-primary text-4xl footer-icon"
             >
-              <FaFacebookF className="text-primary text-4xl" />
+              <FaFacebookF className="relative z-10"/>
+              <span className="footer-icon__bg">&nbsp;</span>
             </a>
             <a
               href="#"
-              className="flex bg-white p-3 rounded-full justify-center items-center"
+              className="flex bg-white p-3 rounded-full justify-center items-center text-primary text-4xl footer-icon"
             >
-              <FaTwitter className="text-primary text-4xl" />
+              <FaTwitter className="relative z-10" />
+              <span className="footer-icon__bg">&nbsp;</span>
             </a>
             <a
               href="#"
-              className="flex bg-white p-3 rounded-full justify-center items-center"
+              className="flex bg-white p-3 rounded-full justify-center items-center text-primary text-4xl footer-icon"
             >
-              <FaInstagram className="text-primary text-4xl" />
+              <FaInstagram className="relative z-10" />
+              <span className="footer-icon__bg">&nbsp;</span>
             </a>
           </div>
           <p className="text-[#AFB5C0] text-2xl">
@@ -39,7 +43,7 @@ function Footer() {
         <nav className="flex justify-between gap-50 lg:gap-30 sm:grid sm:grid-cols-2">
           <div>
             <p className="text-black font-medium text-[2rem] mb-12">Product</p>
-            <ul className="text-2xl space-y-8">
+            <ul className="text-2xl space-y-8 footer-list">
               <li>
                 <a href="#">Download</a>
               </li>

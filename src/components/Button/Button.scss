@@ -67,6 +67,7 @@
     color: white;
   }
   &:active::after {
+    transition: transform .03s, opacity 0.06s;
     opacity: 1;
     transform: scaleX(1) scaleY(1);
   }

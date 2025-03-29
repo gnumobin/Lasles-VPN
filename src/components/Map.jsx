@@ -11,7 +11,7 @@ function Map() {
           locations.
         </HeadBox>
         <div className="w-[90%] mx-auto mt-30">
-            <img src={MapPicture} alt="World Map" className="w-full"/>
+            <img src={MapPicture} alt="World Map" className="w-full pointer-events-none"/>
         </div>
     </section>
   );

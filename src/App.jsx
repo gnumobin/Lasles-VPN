@@ -8,7 +8,7 @@ import Map from "./components/Map";
 import FeaturedIn from "./components/FeaturedIn";
 import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (

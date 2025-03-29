@@ -6,6 +6,8 @@ import Carousel from "./Carousel/Carousel";
 import FirstUserPicture from "../assets/user/user-1.jpg";
 import SecondUserPicture from "../assets/user/user-2.jpeg";
 import ThirdUserPicture from "../assets/user/user-3.png";
+import FourthUserPicture from "../assets/user/user-4.jpeg";
+
 import { SwiperSlide } from "swiper/react";
 
 function Testimonials() {
@@ -36,11 +38,12 @@ function Testimonials() {
       active: false,
     },
     {
-      picture: ThirdUserPicture,
-      author: "Yarify",
-      address: "Madrid, Spain",
-      quote: "I love Mobin, I'm willing to do anything to be with him.",
-      score: 4.5,
+      picture: FourthUserPicture,
+      author: "Didi Kurniawan",
+      address: "Jakarta, Indonesia",
+      quote:
+        "Hey, I am the designer of this website, Thank you very much to Mobin for programming so well for my design.",
+      score: 5,
       active: false,
     },
   ];

@@ -28,7 +28,7 @@ function HeadNav() {
   };
   // Duplicate Styles for navigation list (ul tag)
   const navListStyles =
-    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col h-full top-0 lg:w-2/3 lg:bg-gray-100 lg:p-10 cubic-bezier(.22,-0.21,.21,1.42) duration-500 z-20 rounded-t-3xl rounded-b-3xl";
+    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col h-full top-0 lg:w-2/3 lg:bg-gray-100 lg:p-10 cubic-bezier(.22,-0.21,.21,1.42) duration-500 z-20 rounded-t-3xl rounded-b-3xl items-center lg:items-stretch";
   // Navigation Items Array
   const navItems = ["About", "Features", "Pricing", "Testimonials", "Help"];
   // navigation container styles
@@ -55,10 +55,10 @@ function HeadNav() {
           className={
             showNavigation
               ? navListStyles + " lg:-translate-x-350"
-              : navListStyles + " lg:-translate-x-20"
+              : navListStyles + " lg:-translate-x-20 "
           }
         >
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-6 ">
             <div className="w-1/4 rounded-full">
               <img
                 src={UserPicture}
@@ -81,7 +81,7 @@ function HeadNav() {
             {/* Render Navigation items from external data */}
             {navItems.map((item, index) => (
               <li
-                className="lg:bg-white lg:p-8 rounded-lg hover:text-black duration-200"
+                className="lg:bg-white lg:p-8 lg:rounded-lg hover:text-black duration-200 border-b-1 border-transparent hover:border-black"
                 key={index}
               >
                 <a href="#">{item}</a>
@@ -89,13 +89,13 @@ function HeadNav() {
             ))}
           </ul>
           {/* Buttons! But just show on smaller screens as list item */}
-          <div className="hidden lg:block text-center ">
-            <Button border={false}>Sign In</Button>
-            <Button border={true}>Sign Up</Button>
+          <div className="hidden lg:block text-center">
+            <Button border={false} scale={true}>Sign In</Button>
+            <Button border={true} scale={true}>Sign Up</Button>
           </div>
         </div>
         {/* Cta Buttons: Third Item of Navigation-Container */}
-        <div className="lg:hidden">
+        <div className="lg:hidden items-center flex gap-2">
           {/* Secondary Button */}
           <Button border={false} scale={true}>Sign In</Button>
           {/* Primary Button */}
