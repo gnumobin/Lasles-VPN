@@ -1,33 +1,26 @@
-import "./Carousel.scss";
-import { IoArrowBackSharp, IoArrowForward } from "react-icons/io5";
-
-// import Swiper core and required modules
-import { Navigation, Pagination, A11y } from "swiper/modules";
-
-import { Swiper, } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { useState } from "react";
+import { IoArrowBackSharp, IoArrowForward } from "react-icons/io5";
+import "./Carousel.scss";
+
+// import Swiper core and required modules and styles
+import { Navigation } from "swiper/modules";
+import { Swiper } from "swiper/react";
+import "swiper/css";
 
 export const Carousel = ({ children }) => {
+  // Get window width
   const [wWidth, setWWidth] = useState(window.innerWidth);
+  // even page is resize set new window with again
+  window.addEventListener("resize", (e) => setWWidth(e.target.innerWidth));
 
-  window.addEventListener("resize", (e) => {
-    setWWidth(e.target.innerWidth);
-  });
-
+  // Swiper doesn't work correctly without react-fragment
   return (
     <>
       <Swiper
         className="mb-70 relative"
-        // install Swiper modules
-        modules={[Navigation, Pagination, A11y]}
+        modules={[Navigation]}
         spaceBetween={30}
         slidesPerView={wWidth > 900 ? 2.5 : 1}
-        navigation
       >
         {children}
       </Swiper>

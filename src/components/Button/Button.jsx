@@ -1,4 +1,3 @@
-import React from "react";
 import "./Button.scss";
 
 function Button({
@@ -10,10 +9,10 @@ function Button({
   link = true,
   scale = false,
 }) {
+  // whats is custom prop? handle custom tailwind classes with props
   // Default styles for button
   const defaultBtn =
-    "text-2xl font-medium cursor-pointer text-black relative z-1";
-  // whats is custom? handle custom tailwind classes with props
+    "text-2xl font-medium cursor-pointer text-black relative z-1 inline-block active:translate-y-2 ";
   // if button type is menu padding not applied!
   const menuBtn = type === "menu" ? " " : " py-4.5 px-15";
   // if border is true that button has border and full rounded corner
@@ -30,6 +29,7 @@ function Button({
     type === "shop"
       ? " block w-2/3 text-4xl border-2 rounded-full mx-auto "
       : " ";
+  // for borderd button animation
   const scaleAnimation = scale ? " border-animated " : "";
   // apply all button style approach in this constant
   const executeBtn =
@@ -43,18 +43,16 @@ function Button({
     " button";
   // Hanlde onclick event from props :)
   const eventHandle = (e) => {
-    if (link) {
-      e.preventDefault();
-    }
+    // if button not link disbale anchor default behavior :)
+    if (!link) e.preventDefault();
+    // if onClick function has exist run that!
     onClick && onClick();
   };
+  // print final button on screen
   return (
-    <a
-      href="#"
-      className={"inline-block active:translate-y-2 " + executeBtn}
-      onClick={eventHandle}
-    >
+    <a href="#" className={executeBtn} onClick={eventHandle}>
       {children}
+      {/* this element just for border-animated class animation */}
       <span className="w-1/3 h-full bg-primary absolute top-1/2 left-1/2 rounded-full -translate-1/2 scale-0 duration-300 button__animation -z-1"></span>
     </a>
   );
