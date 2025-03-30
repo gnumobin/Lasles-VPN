@@ -50,7 +50,7 @@ function Button({
   };
   // print final button on screen
   return (
-    <a href="#" className={executeBtn} onClick={eventHandle}>
+    <a href="#" className={executeBtn} onClick={eventHandle} aria-label={children}>
       {children}
       {/* this element just for border-animated class animation */}
       <span className="w-1/3 h-full bg-primary absolute top-1/2 left-1/2 rounded-full -translate-1/2 scale-0 duration-300 button__animation -z-1"></span>

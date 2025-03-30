@@ -2,7 +2,7 @@
   "name": "LasLes VPN",
   "icons": [
     {
-      "src": "./public/logo.png",
+      "src": "/public/logo.svg",
       "type": "image/png",
       "sizes": "512x512"
     }

@@ -93,6 +93,7 @@ function HeadNav() {
             {navItems.map((item, index) => (
               <li key={index}>
                 <a
+                  aria-label={item.label}
                   href={item.link}
                   className="lg:bg-white lg:p-8 lg:rounded-lg hover:text-black duration-200 border-b-1 border-transparent hover:border-black lg:block"
                 >

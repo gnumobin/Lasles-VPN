@@ -29,7 +29,6 @@ function Hero() {
           alt="a guy vector when he working with laptop"
           width={612}
           height={383}
-          loading="lazy"
         />
       </div>
     </section>

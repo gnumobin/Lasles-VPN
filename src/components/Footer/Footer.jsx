@@ -39,7 +39,7 @@ function Footer() {
         {/* Social section */}
         <div className="space-y-15 w-1/3 md:w-full">
           {/* website logo: behavior scroll to top */}
-          <img src={Logo} alt="website logo" width={149} height={37}/>
+          <img src={Logo} alt="website logo" width={149} height={37} />
           {/* final word */}
           <p className="text-2xl leading-11 -mt-5">
             <strong>LaslesVPN</strong> is a private virtual network that has
@@ -50,6 +50,7 @@ function Footer() {
             {/* social icons link renderer */}
             {socialLinkList.map((link, index) => (
               <a
+                aria-label={link}
                 key={index}
                 href="#"
                 className="flex bg-white p-3 rounded-full justify-center items-center duration-200 text-primary text-4xl footer-icon"
@@ -79,7 +80,9 @@ function Footer() {
               <ul className="text-2xl space-y-8 footer-list">
                 {list.list.map((navTitle, index) => (
                   <li key={index}>
-                    <a href="#">{navTitle}</a>
+                    <a href="#" aria-label={navTitle}>
+                      {navTitle}
+                    </a>
                   </li>
                 ))}
               </ul>

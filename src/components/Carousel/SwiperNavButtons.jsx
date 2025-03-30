@@ -7,12 +7,14 @@ function SwiperNavButtons() {
   return (
     <div className="absolute bottom-0 right-5 z-10 space-x-2">
       <button
+        aria-label="previous button"
         className="cursor-pointer bg-primary p-6 rounded-full text-white text-4xl"
         onClick={(_) => swiper.slidePrev()}
       >
         <IoArrowBackSharp />
       </button>
       <button
+        aria-label="next button"
         className="cursor-pointer bg-primary p-6 rounded-full text-white text-4xl"
         onClick={(_) => swiper.slideNext()}
       >

@@ -24,10 +24,10 @@ export const Carousel = ({ children }) => {
       <Swiper
         // install Swiper modules
         className="mb-70"
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination, A11y]}
         spaceBetween={30}
         slidesPerView={wWidth > 900 ? 2.3 : 1.15}
-        pagination={{ clickable: true }}
+        // pagination={{ clickable: true }}
       >
         <SwiperNavButtons />
         {children}
