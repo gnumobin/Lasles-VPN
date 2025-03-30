@@ -17,7 +17,7 @@ function Hero() {
           <strong>LaslesVPN</strong> discover interesting features from us.
         </p>
         {/* Call to action button (from custom component) */}
-        <Button type={"cta"} link={true}>
+        <Button type={"cta"}>
           Get Started
         </Button>
       </div>
@@ -27,6 +27,9 @@ function Hero() {
           className="w-full"
           src={HeroPicture}
           alt="a guy vector when he working with laptop"
+          width={612}
+          height={383}
+          loading="lazy"
         />
       </div>
     </section>

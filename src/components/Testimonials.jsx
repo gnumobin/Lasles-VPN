@@ -48,7 +48,7 @@ function Testimonials() {
   ];
 
   return (
-    <section className="container">
+    <section className="container" id="testimonials">
       <HeadBox title="Trusted by Thousands of " sequence="Happy Customer">
         These are the stories of our customers who have joined us with great
         pleasure when using this crazy feature.

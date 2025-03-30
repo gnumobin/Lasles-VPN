@@ -48,7 +48,7 @@ function Cards() {
   ];
 
   return (
-    <section className="text-center pt-25 container">
+    <section id="cards" className="text-center pt-25 container">
       <HeadBox title="Choose Your Plan">
         Let's choose the package that is best for you and explore it happily and
         cheerfully.

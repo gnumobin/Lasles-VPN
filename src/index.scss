@@ -1,6 +1,7 @@
 /* Global reset */
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 
   @media all and (max-width: 80em) {
     font-size: 60%;

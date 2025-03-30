@@ -1,0 +1,16 @@
+/* if you need to handle buttons position your self
+.swiper-pagination,
+.swiper-button-next,
+.swiper-button-prev {
+  position: static;
+}
+*/
+
+.swiper-pagination {
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-color: #fff;
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-border-radius: 50%;
+  --swiper-pagination-bullet-inactive-color: #000;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}

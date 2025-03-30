@@ -25,6 +25,9 @@ function Testimonial({ active, data }) {
               src={picture}
               alt="picture of author of qoute"
               className="w-full object-cover h-full"
+              width={110}
+              height={100}
+              loading="lazy"
             />
           </div>
           {/* author box */}

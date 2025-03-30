@@ -1,6 +1,6 @@
 import HeadBox from "./HeadBox";
 // import assets
-import MapPicture from '../assets/map.svg'
+import MapPicture from "../assets/map.svg";
 
 function Map() {
   return (
@@ -10,7 +10,14 @@ function Map() {
         you move locations.
       </HeadBox>
       <div className="w-[90%] mx-auto mt-30">
-        <img src={MapPicture} alt="World Map" className="w-full pointer-events-none"/>
+        <img
+          src={MapPicture}
+          alt="World Map"
+          className="w-full pointer-events-none"
+          width={1060}
+          loading="lazy"
+          height={539}
+        />
       </div>
     </section>
   );

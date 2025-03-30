@@ -8,14 +8,17 @@ import FeaturedIn from "./components/FeaturedIn";
 import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer/Footer";
+import { useState } from "react";
+import { useEffect } from "react";
+
 
 function App() {
+
   return (
     <div>
       <header>
         <HeadNav />
       </header>
-      <div className="mt-35">&nbsp;</div>
       <Hero />
       <DataBox />
       <Features />
@@ -25,7 +28,7 @@ function App() {
       <Testimonials />
       <div className="relative">
         <CTA />
-        <Footer />
+        <Footer/>
       </div>
     </div>
   );

@@ -20,6 +20,9 @@ function Card({ active, data }) {
           className="w-full pointer-events-none select-none"
           src={CardPicture}
           alt="celebration box"
+          width={146}
+          height={167}
+          loading="lazy"
         />
       </div>
       {/* content box: title */}

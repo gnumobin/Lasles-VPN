@@ -1,11 +1,16 @@
 import { useState } from "react";
-import { IoArrowBackSharp, IoArrowForward } from "react-icons/io5";
 import "./Carousel.scss";
+//import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
-// import Swiper core and required modules and styles
-import { Navigation } from "swiper/modules";
-import { Swiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import SwiperNavButtons from "./SwiperNavButtons";
 
 export const Carousel = ({ children }) => {
   // Get window width
@@ -17,11 +22,14 @@ export const Carousel = ({ children }) => {
   return (
     <>
       <Swiper
-        className="mb-70 relative"
-        modules={[Navigation]}
+        // install Swiper modules
+        className="mb-70"
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={30}
-        slidesPerView={wWidth > 900 ? 2.5 : 1.3}
+        slidesPerView={wWidth > 900 ? 2.3 : 1.15}
+        pagination={{ clickable: true }}
       >
+        <SwiperNavButtons />
         {children}
       </Swiper>
     </>

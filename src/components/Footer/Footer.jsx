@@ -34,12 +34,12 @@ function Footer() {
   ];
 
   return (
-    <footer className="bg-background pt-85 md:pt-95">
+    <footer id="footer" className="bg-background pt-85 md:pt-95">
       <div className="container flex justify-between md:flex-col-reverse gap-30">
         {/* Social section */}
         <div className="space-y-15 w-1/3 md:w-full">
           {/* website logo: behavior scroll to top */}
-          <img src={Logo} alt="website logo" />
+          <img src={Logo} alt="website logo" width={149} height={37}/>
           {/* final word */}
           <p className="text-2xl leading-11 -mt-5">
             <strong>LaslesVPN</strong> is a private virtual network that has
