@@ -1,0 +1,64 @@
+.embla {
+  width: 100%;
+  &__viewport {
+    overflow: hidden;
+    --slide-spacing: 1rem;
+    --slide-size: 40%;
+    @media screen and (max-width: 64em) {
+      --slide-size: 60%;
+    }
+    @media screen and (max-width: 48em) {
+      --slide-size: 85%;
+      --slide-spacing: 0;
+    }
+  }
+  &__container {
+    display: flex;
+    gap: 2rem;
+    touch-action: pan-y pinch-zoom;
+    margin-left: calc(var(--slide-spacing) * -1);
+  }
+  &__slide {
+    transform: translate3d(0, 0, 0);
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    padding-left: var(--slide-spacing);
+  }
+  &__controls {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 1.2rem;
+    margin-top: 1.8rem;
+  }
+
+  &__dot {
+    padding: 0.6rem;
+    background-color: #dde0e4;
+    border: 2px solid #dde0e4;
+    border-radius: 9999px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &--selected {
+      background-color: #f53838;
+      border: 2px solid #f53838;
+      padding-right: 4rem;
+    }
+  }
+
+  &__slide {
+    transition: 0.2s ease-in-out;
+  }
+  &__slide {
+    &.is-snapped > * {
+      border-color: #f53838;
+    }
+    &:not(.is-snapped) > * {
+      border-color: #ddd;
+    }
+  }
+}

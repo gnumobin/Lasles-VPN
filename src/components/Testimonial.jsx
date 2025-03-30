@@ -1,21 +1,11 @@
 // import assets
 import { IoStar } from "react-icons/io5";
 
-function Testimonial({ active, data }) {
+function Testimonial({ data }) {
   const { author, picture, quote, score, address } = data;
-  // default testimonial styles
-  const defaultStyles =
-    "border-2 rounded-3xl p-14 space-y-5 select-none h-full";
-  // suddle shadow: just for active state
-  const suddleShadow = " shadow-xl shadow-[rgba(13,16,37,0.1)]";
   return (
     <figure
-      className={
-        // if state is active add shadow and primary border color
-        active
-          ? defaultStyles + suddleShadow + " border-primary"
-          : defaultStyles + " border-[#DDD]"
-      }
+      className={"border-2 rounded-3xl p-14 space-y-5 select-none h-full"}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-5">

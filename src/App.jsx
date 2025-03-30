@@ -27,8 +27,8 @@ function App() {
       <FeaturedIn />
       <Testimonials />
       <div className="relative">
-        <CTA />
-        <Footer/>
+        {/* <CTA /> */}
+        {/* <Footer/> */}
       </div>
     </div>
   );

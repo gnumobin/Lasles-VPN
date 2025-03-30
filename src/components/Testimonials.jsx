@@ -1,12 +1,12 @@
-import { SwiperSlide } from "swiper/react";
 import HeadBox from "./HeadBox";
 import Testimonial from "./Testimonial";
-import Carousel from "./Carousel/Carousel";
+// import Carousel from "./Carousel/Carousel";
 // import asstes
 import FirstUserPicture from "../assets/user/user-1.jpg";
 import SecondUserPicture from "../assets/user/user-2.jpg";
 import ThirdUserPicture from "../assets/user/user-3.png";
 import FourthUserPicture from "../assets/user/user-4.png";
+import EmblaCarousel from "./Carousel/EmblaCarousel";
 
 function Testimonials() {
   // all of testimonials
@@ -47,6 +47,8 @@ function Testimonials() {
     },
   ];
 
+  const OPTIONS = {};
+
   return (
     <section className="container" id="testimonials">
       <HeadBox title="Trusted by Thousands of " sequence="Happy Customer">
@@ -54,14 +56,7 @@ function Testimonials() {
         pleasure when using this crazy feature.
       </HeadBox>
       <div className="flex gap-8">
-        <Carousel>
-          {/* print each of testimonials inside a swiper slide for handling carousel */}
-          {testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <Testimonial data={testimonial} active={testimonial.active} />
-            </SwiperSlide>
-          ))}
-        </Carousel>
+        <EmblaCarousel slides={testimonials} options={OPTIONS} />
       </div>
     </section>
   );

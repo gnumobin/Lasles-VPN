@@ -11,6 +11,15 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.0.16
         version: 4.0.16(vite@6.2.3(jiti@2.4.2)(lightningcss@1.29.2)(sass-embedded@1.86.0))
+      embla-carousel:
+        specifier: ^8.5.2
+        version: 8.5.2
+      embla-carousel-class-names:
+        specifier: ^8.5.2
+        version: 8.5.2(embla-carousel@8.5.2)
+      embla-carousel-react:
+        specifier: ^8.5.2
+        version: 8.5.2(react@19.0.0)
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -20,9 +29,6 @@ importers:
       react-icons:
         specifier: ^5.5.0
         version: 5.5.0(react@19.0.0)
-      swiper:
-        specifier: ^11.2.6
-        version: 11.2.6
       tailwindcss:
         specifier: ^4.0.16
         version: 4.0.16
@@ -725,6 +731,24 @@ packages:
   email-addresses@5.0.0:
     resolution: {integrity: sha512-4OIPYlA6JXqtVn8zpHpGiI7vE6EQOAg16aGnDMIAlZVinnoZ8208tW1hAbjWydgN/4PLTT9q+O1K6AH/vALJGw==}
 
+  embla-carousel-class-names@8.5.2:
+    resolution: {integrity: sha512-hYqvN06fzOs+e3QQKkDTqIxiTdlxSKoMQ7lO7oStRr/u1Gc8kNCBSh2flWmnXAHhZiVxoAX6o4jiBqJGW6xHsQ==}
+    peerDependencies:
+      embla-carousel: 8.5.2
+
+  embla-carousel-react@8.5.2:
+    resolution: {integrity: sha512-Tmx+uY3MqseIGdwp0ScyUuxpBgx5jX1f7od4Cm5mDwg/dptEiTKf9xp6tw0lZN2VA9JbnVMl/aikmbc53c6QFA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.1 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+
+  embla-carousel-reactive-utils@8.5.2:
+    resolution: {integrity: sha512-QC8/hYSK/pEmqEdU1IO5O+XNc/Ptmmq7uCB44vKplgLKhB/l0+yvYx0+Cv0sF6Ena8Srld5vUErZkT+yTahtDg==}
+    peerDependencies:
+      embla-carousel: 8.5.2
+
+  embla-carousel@8.5.2:
+    resolution: {integrity: sha512-xQ9oVLrun/eCG/7ru3R+I5bJ7shsD8fFwLEY7yPe27/+fDHCNj0OT5EoG5ZbFyOxOcG6yTwW8oTz/dWyFnyGpg==}
+
   enhanced-resolve@5.18.1:
     resolution: {integrity: sha512-ZSW3ma5GkcQBIpwZTSRAI8N71Uuwgs93IezB7mf7R60tC8ZbJideoDNKjHn2O9KIlx6rkGTTEk1xUCK2E1Y2Yg==}
     engines: {node: '>=10.13.0'}
@@ -1352,10 +1376,6 @@ packages:
   supports-color@8.1.1:
     resolution: {integrity: sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q==}
     engines: {node: '>=10'}
-
-  swiper@11.2.6:
-    resolution: {integrity: sha512-8aXpYKtjy3DjcbzZfz+/OX/GhcU5h+looA6PbAzHMZT6ESSycSp9nAjPCenczgJyslV+rUGse64LMGpWE3PX9Q==}
-    engines: {node: '>= 4.7.0'}
 
   sync-child-process@1.0.2:
     resolution: {integrity: sha512-8lD+t2KrrScJ/7KXCSyfhT3/hRq78rC0wBFqNJXv3mZyn6hW2ypM05JmlSvtqRbeq6jqA94oHbxAr2vYsJ8vDA==}
@@ -2008,6 +2028,22 @@ snapshots:
 
   email-addresses@5.0.0: {}
 
+  embla-carousel-class-names@8.5.2(embla-carousel@8.5.2):
+    dependencies:
+      embla-carousel: 8.5.2
+
+  embla-carousel-react@8.5.2(react@19.0.0):
+    dependencies:
+      embla-carousel: 8.5.2
+      embla-carousel-reactive-utils: 8.5.2(embla-carousel@8.5.2)
+      react: 19.0.0
+
+  embla-carousel-reactive-utils@8.5.2(embla-carousel@8.5.2):
+    dependencies:
+      embla-carousel: 8.5.2
+
+  embla-carousel@8.5.2: {}
+
   enhanced-resolve@5.18.1:
     dependencies:
       graceful-fs: 4.2.11
@@ -2598,8 +2634,6 @@ snapshots:
   supports-color@8.1.1:
     dependencies:
       has-flag: 4.0.0
-
-  swiper@11.2.6: {}
 
   sync-child-process@1.0.2:
     dependencies:
