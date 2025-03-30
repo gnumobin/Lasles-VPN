@@ -6,11 +6,12 @@ import Humberger from "./Humberger/Hamberger";
 // Import assets
 import Logo from "../assets/logo.svg";
 import UserPicture from "../assets/girl.jpg";
+import { disableScroll, enableScroll } from "../utils/scroll";
 
 function HeadNav() {
   // Duplicate Styles for navigation list (ul tag)
   const navListStyles =
-    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col h-full top-0 lg:w-2/3 lg:bg-gray-100 lg:p-10 cubic-bezier(.22,-0.21,.21,1.42) duration-500 z-20 rounded-t-3xl rounded-b-3xl items-center lg:items-stretch";
+    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col h-full top-0 lg:w-2/3 lg:bg-gray-100 lg:p-10 cubic-bezier(.22,-0.21,.21,1.42) duration-500 z-20 rounded-t-[2rem] rounded-b-[2rem] items-center lg:items-stretch";
   // Navigation Items Array
   const navItems = [
     { label: "About", link: "#" },
@@ -22,37 +23,20 @@ function HeadNav() {
   // navigation container styles
   let navContainer =
     "w-full flex items-center justify-between fixed top-0 left-0 py-6 px-20 z-20 md:px-15 border-gray-200";
-  // for hamburger menu button
-  const [active, setActive] = useState(false);
-  // if menu state: open disable scroll option in web
-  useEffect(() => {
-    if (active) {
-      document.querySelector("body").classList.add("overflow-hidden");
-    } else {
-      document.querySelector("body").classList.remove("overflow-hidden");
-    }
-  }, [active]);
-
   // State of show menu
-  const [showNavigation, setShowNavigation] = useState(true);
-  // Handle Show menu for smaller screens
-  const showNavigationHandle = () => {
-    setShowNavigation(!showNavigation);
-    setActive(!active);
-  };
+  const [showNavigation, setShowNavigation] = useState(false);
+  // if menu state: open disable scroll option in web
+  if (showNavigation) {
+    disableScroll();
+  } else enableScroll();
 
   return (
     <>
       {/* print overlay */}
-      <Overlay
-        show={showNavigation}
-        state={setShowNavigation}
-        active={active}
-        setActive={setActive}
-      />
+      <Overlay show={showNavigation} state={setShowNavigation} />
       {/* overall navigation container */}
       <nav
-        className={showNavigation ? `${navContainer} bg-white` : navContainer}
+        className={showNavigation ? navContainer : `${navContainer} bg-white`}
       >
         {/* Logo Box: First Item of Navigation-Container */}
         <div className="flex items-center gap-4 ">
@@ -62,8 +46,8 @@ function HeadNav() {
         <div
           className={
             showNavigation
-              ? navListStyles + " lg:-translate-x-350"
-              : navListStyles + " lg:-translate-x-20 "
+              ? navListStyles + " lg:-translate-x-20"
+              : navListStyles + " lg:-translate-x-350 "
           }
         >
           {/* user account part */}
@@ -130,8 +114,12 @@ function HeadNav() {
           </Button>
         </div>
         {/* Mobile Menu: Button */}
-        <div onClick={showNavigationHandle} className="hidden lg:block">
-          <Humberger active={active} />
+        <div
+          // open/close menu handler state
+          onClick={(_) => setShowNavigation(!showNavigation)}
+          className="hidden lg:block"
+        >
+          <Humberger active={showNavigation} />
         </div>
       </nav>
       {/* cover navigation height size casue nav is fixed position */}

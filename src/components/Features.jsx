@@ -13,7 +13,7 @@ function Features() {
   return (
     <section
       id="features"
-      className="mx-auto max-w-[128rem] pt-22 pb-22 px-15 flex items-center lg:flex-col lg:text-center gap-8 shadow-2xl shadow-gray-100"
+      className="container pt-22 pb-22  flex items-center lg:flex-col lg:text-center gap-8 shadow-2xl shadow-gray-100"
     >
       {/* image box */}
       <div className="w-1/2 lg:w-2/3 lg:mb-20">

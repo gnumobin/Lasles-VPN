@@ -8,25 +8,46 @@ import FeaturedIn from "./components/FeaturedIn";
 import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer/Footer";
+import { useEffect } from "react";
+// import aos library
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  // set aos:scroll page animation library configs
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
   return (
     <div>
       <header>
         <HeadNav />
       </header>
+
       <main>
-        <Hero />
-        <DataBox />
-        <Features />
-        <Cards />
-        <Map />
-        <FeaturedIn />
-        <div className="mb-75">
+        <div data-aos="fade-up">
+          <Hero />
+          <DataBox />
+        </div>
+        <div data-aos="fade-right">
+          <Cards />
+        </div>
+        <div data-aos="fade-left">
+          <Features />
+        </div>
+        <div data-aos="fade-right">
+          <Map />
+        </div>
+        <div data-aos="zoom-in">
+          <FeaturedIn />
+        </div>
+        <div className="mb-75" data-aos="fade-left">
           <Testimonials />
         </div>
       </main>
-      <div className="relative">
+      <div className="relative" data-aos="fade-down">
         <CTA />
         <Footer />
       </div>
