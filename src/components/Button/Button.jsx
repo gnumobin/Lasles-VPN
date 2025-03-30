@@ -6,7 +6,7 @@ function Button({
   type = "normal",
   onClick,
   custom = "",
-  link = true,
+  link = false,
   scale = false,
 }) {
   // whats is custom prop? handle custom tailwind classes with props
@@ -17,7 +17,7 @@ function Button({
   const menuBtn = type === "menu" ? " " : " py-4.5 px-15";
   // if border is true that button has border and full rounded corner
   const borderBtn = border
-    ? " border-2 rounded-full text-primary border-animated"
+    ? " border-2 rounded-full text-primary "
     : " second ";
   // if button type is cta button get background (primary-color) and suddle shadow
   const typeBtn =

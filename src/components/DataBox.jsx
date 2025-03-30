@@ -1,4 +1,3 @@
-import React from "react";
 import { Fragment } from "react";
 import { IoCloud, IoLocationSharp, IoPerson } from "react-icons/io5";
 

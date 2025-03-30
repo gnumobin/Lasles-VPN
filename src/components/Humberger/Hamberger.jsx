@@ -1,12 +1,15 @@
 import React from "react";
 import "./Hamberger.scss";
 
-function Humberger({ active }) {
+function Humberger({ active, onClick, className }) {
+  // active prop for open/close btnMenu state
+  // print a svg for better animation and user experience
   return (
     <svg
-      className={active ? "ham ham6 active" : "ham6 ham"}
+      className={active ? "ham ham6 active " + className : "ham6 ham " + className}
       viewBox="0 0 100 100"
       width="80"
+      onClick={onClick}
     >
       <path
         className="line top"

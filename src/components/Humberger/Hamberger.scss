@@ -1,3 +1,4 @@
+// hamburger menu overall styles
 .ham {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -11,6 +12,7 @@
   top: -16%;
   right: .25%;
 }
+// if state is active apply this styles
 .hamRotate.active {
   transform: rotate(45deg);
 }
@@ -28,7 +30,7 @@
   stroke-width: 5.5;
   stroke-linecap: round;
 }
-
+// Manipulation svg lines for cooler animation
 .ham6 .top {
   stroke-dasharray: 40 172;
 }

@@ -1,7 +1,6 @@
-import React from "react";
 import Button from "./Button/Button";
 // Import Assets
-import HeroPicture from "../assets/hero.png";
+import HeroPicture from "../assets/hero.svg";
 
 function Hero() {
   return (
@@ -19,7 +18,7 @@ function Hero() {
         </p>
         {/* Call to action button (from custom component) */}
         <Button type={"cta"} link={true}>
-        Get Started
+          Get Started
         </Button>
       </div>
       {/* ImageBox */}

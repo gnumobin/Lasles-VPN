@@ -1,46 +1,51 @@
 footer {
-    li {
-        position: relative;
-        &::before {
-            content: '●';
-            transition: .2s;
-            position: absolute;
-            left: 10%;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 0;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        &:hover {
-            color: #0b132a;
-        }
-        &:hover::before {
-            left: -20%;
-            opacity: 1;
-        }
+  // add hover effect to all list items in footer
+  li {
+    position: relative;
+    // typothetical element | create simple fill circle aside of list item
+    &::before {
+      content: "●";
+      transition: 0.2s;
+      position: absolute;
+      left: 10%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      cursor: pointer;
+      font-weight: bold;
     }
+    // hover effect
+    &:hover {
+      color: #0b132a;
+    }
+    &:hover::before {
+      left: -20%;
+      opacity: 1;
+    }
+  }
 }
+// social link hover effects manage
 
 .footer-icon {
-    position: relative;
-    overflow: hidden;
-    transition: .2s;
-    &__bg {
-        transition: top .2s, transform .6s;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: #f53838;
-        top: -100%;
-        transform: scale(0);
-        // z-index: -1;
-    }
-    &:hover &__bg {
-        transform: scale(2);
-        top: 0%;
-    }
-    &:hover {
-        color: white;
-    }
+  position: relative;
+  overflow: hidden;
+  transition: 0.2s;
+  // background default state styles
+  &__bg {
+    transition: top 0.2s, transform 0.6s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #f53838;
+    top: -100%;
+    transform: scale(0);
+  }
+  //   handle hover effects
+  &:hover &__bg {
+    transform: scale(2);
+    top: 0%;
+  }
+  &:hover {
+    color: white;
+  }
 }

@@ -2,6 +2,7 @@ import HeadBox from "./HeadBox";
 import Card from "./Card";
 
 function Cards() {
+  // all of cards data
   const cards = [
     {
       title: "Free Plan",
@@ -10,6 +11,7 @@ function Cards() {
         "Encrypted Connection",
         "No Traffic Logs",
         "Works on All Devices",
+        // empty strings for keeping card container gutters | more explain in card component
         "",
         "",
         "",
@@ -53,6 +55,7 @@ function Cards() {
       </HeadBox>
       {/* Cards container */}
       <div className="grid gap-40 mt-10 grid-cols-3 xl:gap-15 lg:grid-cols-2 sm:flex sm:flex-col">
+        {/* print each of card in screen */}
         {cards.map((card, index) => (
           <Card data={card} key={index} active={card.active} />
         ))}

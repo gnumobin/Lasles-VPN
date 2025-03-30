@@ -1,16 +1,15 @@
-import React from "react";
+import { SwiperSlide } from "swiper/react";
 import HeadBox from "./HeadBox";
 import Testimonial from "./Testimonial";
 import Carousel from "./Carousel/Carousel";
-
+// import asstes
 import FirstUserPicture from "../assets/user/user-1.jpg";
-import SecondUserPicture from "../assets/user/user-2.jpeg";
+import SecondUserPicture from "../assets/user/user-2.jpg";
 import ThirdUserPicture from "../assets/user/user-3.png";
-import FourthUserPicture from "../assets/user/user-4.jpeg";
-
-import { SwiperSlide } from "swiper/react";
+import FourthUserPicture from "../assets/user/user-4.png";
 
 function Testimonials() {
+  // all of testimonials
   const testimonials = [
     {
       picture: FirstUserPicture,
@@ -55,7 +54,8 @@ function Testimonials() {
         pleasure when using this crazy feature.
       </HeadBox>
       <div className="flex gap-8">
-        <Carousel total={testimonials.length}>
+        <Carousel>
+          {/* print each of testimonials inside a swiper slide for handling carousel */}
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <Testimonial data={testimonial} active={testimonial.active} />

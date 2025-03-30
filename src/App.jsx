@@ -1,4 +1,3 @@
-import React from "react";
 import HeadNav from "./components/HeadNav";
 import Hero from "./components/Hero";
 import DataBox from "./components/DataBox";
@@ -16,6 +15,7 @@ function App() {
       <header>
         <HeadNav />
       </header>
+      <div className="mt-35">&nbsp;</div>
       <Hero />
       <DataBox />
       <Features />

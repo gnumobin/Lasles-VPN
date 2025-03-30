@@ -20,7 +20,7 @@ export const Carousel = ({ children }) => {
         className="mb-70 relative"
         modules={[Navigation]}
         spaceBetween={30}
-        slidesPerView={wWidth > 900 ? 2.5 : 1}
+        slidesPerView={wWidth > 900 ? 2.5 : 1.3}
       >
         {children}
       </Swiper>
