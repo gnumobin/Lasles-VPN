@@ -8,27 +8,27 @@ import FeaturedIn from "./components/FeaturedIn";
 import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer/Footer";
-import { useState } from "react";
-import { useEffect } from "react";
-
 
 function App() {
-
   return (
     <div>
       <header>
         <HeadNav />
       </header>
-      <Hero />
-      <DataBox />
-      <Features />
-      <Cards />
-      <Map />
-      <FeaturedIn />
-      <Testimonials />
+      <main>
+        <Hero />
+        <DataBox />
+        <Features />
+        <Cards />
+        <Map />
+        <FeaturedIn />
+        <div className="mb-75">
+          <Testimonials />
+        </div>
+      </main>
       <div className="relative">
-        {/* <CTA /> */}
-        {/* <Footer/> */}
+        <CTA />
+        <Footer />
       </div>
     </div>
   );

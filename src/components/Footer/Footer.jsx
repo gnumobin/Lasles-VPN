@@ -64,7 +64,7 @@ function Footer() {
           </div>
           {/* Social section: copyright */}
           <p className="text-[#AFB5C0] text-2xl">
-            ©2020Lasles<strong>VPN</strong>
+            ©2025 Lasles<strong>VPN</strong>
           </p>
         </div>
         {/* footer navigation container */}

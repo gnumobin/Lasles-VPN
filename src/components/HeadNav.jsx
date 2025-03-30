@@ -5,7 +5,7 @@ import Overlay from "./Overlay";
 import Humberger from "./Humberger/Hamberger";
 // Import assets
 import Logo from "../assets/logo.svg";
-import UserPicture from "../assets/user/user-2.jpg";
+import UserPicture from "../assets/girl.jpg";
 
 function HeadNav() {
   // Duplicate Styles for navigation list (ul tag)
@@ -72,13 +72,13 @@ function HeadNav() {
               <img
                 src={UserPicture}
                 alt="picture of logged-in user "
-                className="rounded-full"
+                className="rounded-full border-2 border-[#ddd]"
                 width={110}
                 height={110}
               />
             </div>
             <div className="space-y-5">
-              <p className="font-medium text-black text-3xl">Gnu Mobin</p>
+              <p className="font-medium text-black text-3xl">Sarah Connor</p>
               <p className="text-xl flex gap-1 items-center">
                 <IoBalloonSharp className="text-secondary" />
                 <span className="uppercase">Online</span>

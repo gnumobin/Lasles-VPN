@@ -128,8 +128,7 @@ import {
   usePrevNextButtons,
 } from "./EmblaCarouselArrowButtons";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
-import "../../css/base.css";
-import "../../css/embla.scss";
+import "./embla.scss";
 import Testimonial from "../Testimonial";
 
 const EmblaCarousel = (props) => {
