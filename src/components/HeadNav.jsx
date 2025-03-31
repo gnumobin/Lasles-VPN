@@ -1,17 +1,17 @@
-import { IoBalloonSharp, IoPower } from "react-icons/io5";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { disableScroll, enableScroll } from "../utils/scroll";
 import Button from "./Button/Button";
 import Overlay from "./Overlay";
 import Humberger from "./Humberger/Hamberger";
 // Import assets
 import Logo from "../assets/logo.svg";
 import UserPicture from "../assets/girl.jpg";
-import { disableScroll, enableScroll } from "../utils/scroll";
+import { useMemo } from "react";
 
 function HeadNav() {
   // Duplicate Styles for navigation list (ul tag)
   const navListStyles =
-    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col h-full top-0 lg:w-2/3 lg:bg-gray-100 lg:p-10 cubic-bezier(.22,-0.21,.21,1.42) duration-500 z-20 rounded-t-[2rem] rounded-b-[2rem] items-center lg:items-stretch";
+    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col h-full top-0 lg:w-2/3 lg:bg-gray-100 lg:p-10 z-20 items-center lg:items-stretch navContainer";
   // Navigation Items Array
   const navItems = [
     { label: "About", link: "#" },
@@ -21,7 +21,7 @@ function HeadNav() {
     { label: "Help", link: "#footer" },
   ];
   // navigation container styles
-  let navContainer =
+  const navContainer =
     "w-full flex items-center justify-between fixed top-0 left-0 py-6 px-20 z-20 md:px-15 border-gray-200";
   // State of show menu
   const [showNavigation, setShowNavigation] = useState(false);
@@ -30,14 +30,18 @@ function HeadNav() {
     disableScroll();
   } else enableScroll();
 
+  // for not re-render
+  const navStyle = useMemo(
+    () => (showNavigation ? navContainer : `${navContainer} bg-white`),
+    [showNavigation, navContainer]
+  );
+
   return (
     <>
       {/* print overlay */}
       <Overlay show={showNavigation} state={setShowNavigation} />
       {/* overall navigation container */}
-      <nav
-        className={showNavigation ? navContainer : `${navContainer} bg-white`}
-      >
+      <nav className={navStyle}>
         {/* Logo Box: First Item of Navigation-Container */}
         <div className="flex items-center gap-4 ">
           <img src={Logo} alt="website logo" width={149} height={37} />
@@ -63,13 +67,10 @@ function HeadNav() {
             </div>
             <div className="space-y-5">
               <p className="font-medium text-black text-3xl">Sarah Connor</p>
-              <p className="text-xl flex gap-1 items-center">
-                <IoBalloonSharp className="text-secondary" />
-                <span className="uppercase">Online</span>
+              <p className="text-xl flex gap-2 items-center">
+                <span className="text-secondary -mt-1">●</span>
+                <span className="uppercase select-none">Online</span>
               </p>
-            </div>
-            <div className="ml-auto cursor-pointer">
-              <IoPower size={28} className="text-primary" />
             </div>
           </div>
           <ul className="flex lg:flex-col gap-20 lg:gap-5">
@@ -96,7 +97,7 @@ function HeadNav() {
             </Button>
           </div>
           <p className="text-center hidden lg:block uppercase mt-auto">
-            Develop by:{" "}
+            Develop by:
             <a target="_blank" href="https://github.com/gnumobin">
               <strong className="text-blue-500 capitalize">GnuMobin</strong>
             </a>

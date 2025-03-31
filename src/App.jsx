@@ -27,7 +27,7 @@ function App() {
       </header>
 
       <main>
-        <div data-aos="fade-up">
+        <div data-aos="fade-up" data-aos-duration="1500">
           <Hero />
           <DataBox />
         </div>

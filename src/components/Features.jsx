@@ -39,7 +39,7 @@ function Features() {
         <ul className="text-[1.4rem] space-y-5 grid lg:grid-cols-2 md:text-xl sm:flex sm:flex-col lg:pl-60 sm:-ml-60">
           {/* print all features we have */}
           {features.map((feature, index) => (
-            <li key={index} className="flex items-center gap-3">
+            <li key={index} className="flex items-center gap-3 duration-200 hover:text-black hover:font-bold">
               <IoCheckmarkCircle size={24} className="text-secondary" />
               <span>{feature}</span>
             </li>

@@ -13,7 +13,7 @@ function FeaturedIn() {
         <img
           src={NetflixPicture}
           alt="netflix logo"
-          className="w-1/6"
+          className="w-1/6 duration-200 hover:brightness-25 cursor-alias"
           width={200}
           height={114}
           loading="lazy"
@@ -21,7 +21,7 @@ function FeaturedIn() {
         <img
           src={RedditPicture}
           alt="reddit logo"
-          className="w-1/6"
+          className="w-1/6 duration-200 hover:brightness-25 cursor-alias"
           width={157}
           height={52}
           loading="lazy"
@@ -29,7 +29,7 @@ function FeaturedIn() {
         <img
           src={AmazonPicture}
           alt="amazon logo"
-          className="w-1/6"
+          className="w-1/6 duration-200 hover:brightness-25 cursor-alias"
           width={278}
           height={210}
           loading="lazy"
@@ -37,7 +37,7 @@ function FeaturedIn() {
         <img
           src={DiscordPicture}
           alt="discord logo"
-          className="w-1/6"
+          className="w-1/6 duration-200 hover:brightness-25 cursor-alias"
           width={188}
           height={64}
           loading="lazy"
@@ -45,7 +45,7 @@ function FeaturedIn() {
         <img
           src={SpotifyPicture}
           alt="spotify logo"
-          className="w-1/6"
+          className="w-1/6 duration-200 hover:brightness-25 cursor-alias"
           width={172}
           height={52}
           loading="lazy"

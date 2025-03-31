@@ -47,8 +47,6 @@ function Testimonials() {
     },
   ];
 
-  const OPTIONS = {};
-
   return (
     <section className="container" id="testimonials">
       <HeadBox title="Trusted by Thousands of " sequence="Happy Customer">
@@ -56,7 +54,7 @@ function Testimonials() {
         pleasure when using this crazy feature.
       </HeadBox>
       <div className="flex gap-8">
-        <EmblaCarousel slides={testimonials} options={OPTIONS} />
+        <EmblaCarousel slides={testimonials} options={{}} />
       </div>
     </section>
   );
