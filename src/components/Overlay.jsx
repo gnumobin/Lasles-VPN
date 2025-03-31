@@ -3,13 +3,13 @@ import React from "react";
 function Overlay({ show, state }) {
   // default styles
   const defaultStyles =
-    "h-20 w-20 fixed bg-black z-15 -mt-30 duration-500 opacity-60 rounded-full top-35 right-10 ";
+    "h-full w-full fixed bg-black z-15 -mt-30 opacity-60 ";
 
   return (
     <div
       // handle toggle beetwin show/unshow
       className={
-        show ? defaultStyles + "scale-[100] " : defaultStyles + "scale-0"
+        show ? defaultStyles + "visible " : defaultStyles + "invisible"
       }
       onClick={() => state(!show)}
     >

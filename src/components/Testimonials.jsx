@@ -1,5 +1,4 @@
 import HeadBox from "./HeadBox";
-import Testimonial from "./Testimonial";
 // import Carousel from "./Carousel/Carousel";
 // import asstes
 import FirstUserPicture from "../assets/user/user-1.jpg";
