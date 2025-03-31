@@ -3,7 +3,7 @@ import React from "react";
 function Overlay({ show, state }) {
   // default styles
   const defaultStyles =
-    "h-20 w-20 fixed bg-black z-15 -mt-30 duration-600 opacity-60 rounded-full top-35 right-10 ";
+    "h-20 w-20 fixed bg-black z-15 -mt-30 duration-500 opacity-60 rounded-full top-35 right-10 ";
 
   return (
     <div

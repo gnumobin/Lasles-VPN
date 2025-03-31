@@ -6,7 +6,6 @@ import Humberger from "./Humberger/Hamberger";
 // Import assets
 import Logo from "../assets/logo.svg";
 import UserPicture from "../assets/girl.jpg";
-import { useMemo } from "react";
 
 function HeadNav() {
   // Duplicate Styles for navigation list (ul tag)
@@ -31,10 +30,7 @@ function HeadNav() {
   } else enableScroll();
 
   // for not re-render
-  const navStyle = useMemo(
-    () => (showNavigation ? navContainer : `${navContainer} bg-white`),
-    [showNavigation, navContainer]
-  );
+  const navStyle = showNavigation ? navContainer : `${navContainer} bg-white`;
 
   return (
     <>
