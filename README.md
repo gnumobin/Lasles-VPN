@@ -38,6 +38,6 @@
 
 - <a href='https://mobin-vpn.netlify.app/'>Preview Web!</a>
 
-## 👀 - Can I help? Tell me!
+## 🤔 - Can I help? Tell me!
 
 - <a href='https://t.me/gnuMobin'>Telegram</a>
