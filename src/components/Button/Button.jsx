@@ -19,7 +19,7 @@ function Button({
   const borderBtn = border
     ? " border-2 rounded-full text-primary "
     : " second ";
-  // if button type is cta button get background (primary-color) and suddle shadow
+  // if button type is cta button get background (primary-color) and saddle shadow
   const typeBtn =
     type === "cta"
       ? " bg-primary text-white rounded-xl shadow-2xl shadow-primary px-30 py-8 cta-animted"
@@ -29,7 +29,7 @@ function Button({
     type === "shop"
       ? " block w-2/3 text-4xl border-2 rounded-full mx-auto "
       : " ";
-  // for borderd button animation
+  // for bordered button animation
   const scaleAnimation = scale ? " border-animated " : "";
   // apply all button style approach in this constant
   const executeBtn =
@@ -41,16 +41,21 @@ function Button({
     scaleAnimation +
     custom +
     " button";
-  // Hanlde onclick event from props :)
+  // Handle onclick event from props :)
   const eventHandle = (e) => {
-    // if button not link disbale anchor default behavior :)
+    // if button not link disable anchor default behavior :)
     if (!link) e.preventDefault();
     // if onClick function has exist run that!
     onClick && onClick();
   };
   // print final button on screen
   return (
-    <a href="#" className={executeBtn} onClick={eventHandle} aria-label={children}>
+    <a
+      href="#"
+      className={executeBtn}
+      onClick={eventHandle}
+      aria-label={children}
+    >
       {children}
       {/* this element just for border-animated class animation */}
       <span className="w-1/3 h-full bg-primary absolute top-1/2 left-1/2 rounded-full -translate-1/2 scale-0 duration-300 button__animation -z-1"></span>

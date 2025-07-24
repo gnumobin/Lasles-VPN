@@ -6,6 +6,9 @@ import Humberger from "./Humberger/Hamberger";
 // Import assets
 import Logo from "../assets/logo.svg";
 import UserPicture from "../assets/girl.jpg";
+import { FaRegMoon, FaRegUserCircle } from "react-icons/fa";
+import { SiGnuprivacyguard } from "react-icons/si";
+import { MdOutlineAccountCircle } from "react-icons/md";
 
 function HeadNav() {
   // Duplicate Styles for navigation list (ul tag)
@@ -102,12 +105,21 @@ function HeadNav() {
         {/* Cta Buttons: Third Item of Navigation-Container */}
         <div className="lg:hidden items-center flex gap-2">
           {/* Secondary Button */}
-          <Button border={false} scale={true}>
+          {/* <Button border={false} scale={true}>
             Sign In
-          </Button>
+          </Button> */}
           {/* Primary Button */}
           <Button border={true} scale={true}>
-            Sign Up
+            {/* Sign Up */}
+            <FaRegUserCircle />
+          </Button>
+          <Button
+            border={true}
+            scale={true}
+            custom="border-black !text-black [&>span]:bg-black hover:!text-background hover:!border-black"
+          >
+            {/* Dark Mode */}
+            <FaRegMoon />
           </Button>
         </div>
         {/* Mobile Menu: Button */}
@@ -119,7 +131,7 @@ function HeadNav() {
           <Humberger active={showNavigation} />
         </div>
       </nav>
-      {/* cover navigation height size casue nav is fixed position */}
+      {/* cover navigation height size cause nav is fixed position */}
       <div className="mt-30">&nbsp;</div>
     </>
   );
