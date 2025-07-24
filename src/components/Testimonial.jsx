@@ -13,7 +13,7 @@ function Testimonial({ data }) {
           <div className="w-22 h-22 rounded-full overflow-hidden ">
             <img
               src={picture}
-              alt="picture of author of qoute"
+              alt="picture of author of quote"
               className="w-full object-cover h-full"
               width={110}
               height={100}

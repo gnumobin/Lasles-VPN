@@ -1,5 +1,3 @@
-import React from "react";
-
 function HeadBox({ children, title, sequence, direction = "center" }) {
   // default paragraph styles
   const defaultDescriptionStyles =

@@ -14,10 +14,6 @@ footer {
       cursor: pointer;
       font-weight: bold;
     }
-    // hover effect
-    &:hover {
-      color: #0b132a;
-    }
     &:hover::before {
       left: -20%;
       opacity: 1;

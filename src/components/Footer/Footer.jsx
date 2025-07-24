@@ -1,7 +1,7 @@
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import "./Footer.scss";
 // import assets
-import Logo from "../../assets/logo.svg";
+import Logo from "../../assets/logo.png";
 
 function Footer() {
   // all of navigation items: title and lists (anchors)
@@ -39,7 +39,12 @@ function Footer() {
         {/* Social section */}
         <div className="space-y-15 w-1/3 md:w-full">
           {/* website logo: behavior scroll to top */}
-          <img src={Logo} alt="website logo" width={149} height={37} />
+          <div className="flex items-center gap-4">
+            <img src={Logo} alt="website logo" width={30} height={30} />
+            <strong className="text-3xl text-black font-bolder">
+              LaslesVPN
+            </strong>
+          </div>
           {/* final word */}
           <p className="text-2xl leading-11 -mt-5">
             <strong>LaslesVPN</strong> is a private virtual network that has
@@ -69,7 +74,7 @@ function Footer() {
         </div>
         {/* footer navigation container */}
         <nav className="flex justify-between gap-50 lg:gap-30 sm:grid sm:grid-cols-2">
-          {/* naviagtion list renderer */}
+          {/* navigation list renderer */}
           {navigationLists.map((list, index) => (
             <div key={index}>
               {/* print title */}
@@ -79,7 +84,7 @@ function Footer() {
               {/* print list (anchors) */}
               <ul className="text-2xl space-y-8 footer-list">
                 {list.list.map((navTitle, index) => (
-                  <li key={index}>
+                  <li key={index} className="hover:text-black">
                     <a href="#" aria-label={navTitle}>
                       {navTitle}
                     </a>

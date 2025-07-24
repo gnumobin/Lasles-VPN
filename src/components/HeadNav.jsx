@@ -4,15 +4,16 @@ import Button from "./Button/Button";
 import Overlay from "./Overlay";
 import Humberger from "./Humberger/Hamberger";
 // Import assets
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/logo.png";
 import UserPicture from "../assets/girl.jpg";
-import { FaRegMoon, FaRegUserCircle } from "react-icons/fa";
+import { FaRegMoon } from "react-icons/fa";
 import { useEffect } from "react";
+import { FaRegCircleUser } from "react-icons/fa6";
 
 function HeadNav() {
   // Duplicate Styles for navigation list (ul tag)
   const navListStyles =
-    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col lg:h-[98dvh] top-2.5 lg:w-2/3 lg:bg-gray-100 lg:p-10 z-20 items-center lg:items-stretch navContainer";
+    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col lg:h-[98dvh] top-2.5 lg:w-2/3 lg:bg-mobile-menu-bg lg:p-10 z-20 items-center lg:items-stretch navContainer";
   // Navigation Items Array
   const navItems = [
     { label: "About", link: "#" },
@@ -23,7 +24,7 @@ function HeadNav() {
   ];
   // navigation container styles
   const navContainer =
-    "w-full flex items-center justify-between fixed top-0 left-0 py-6 px-20 z-20 md:px-15 border-gray-200";
+    "w-full flex items-center justify-between py-6 px-20 z-20 md:px-15 border-gray-200";
   // State of show menu
   const [showNavigation, setShowNavigation] = useState(false);
   // if menu state: open disable scroll option in web
@@ -31,14 +32,14 @@ function HeadNav() {
     disableScroll();
   } else enableScroll();
 
-  // for not re-render
-  const navStyle = showNavigation ? navContainer : `${navContainer} bg-white`;
   //
   const [darkTheme, setDarkTheme] = useState(false);
   //
-  const ballStyle = `bg-background w-50 h-50 rounded-full scale-[${
-    darkTheme ? "40" : "0"
-  }] fixed -top-10 right-13 transition duration-800 ease`;
+  const ballStyleDefault = `bg-background w-40 h-40 rounded-full fixed -top-10 right-13 dark-mode-ball`;
+  const ballStyle = darkTheme
+    ? `${ballStyleDefault} scale-[30]`
+    : `${ballStyleDefault} scale-[0]`;
+
   //
   const changeThemeHandler = () => {
     setDarkTheme((prev) => !prev);
@@ -69,6 +70,20 @@ function HeadNav() {
       "--color-shadow-features",
       darkTheme ? "#101828" : "#f3f4f6"
     );
+    document.documentElement.style.setProperty(
+      "--color-shadow-databox",
+      darkTheme ? "rgba(242, 239, 218, 0.1)" : "rgba(13, 16, 37, 0.1)"
+    );
+    document.documentElement.style.setProperty(
+      "--color-mobile-menu-bg",
+      darkTheme ? "#101828" : "#f3f4f6"
+    );
+    document.documentElement.style.setProperty(
+      "--color-mobile-menu-bg",
+      darkTheme ? "#101828" : "#f3f4f6"
+    );
+    //     --color-super-light: #eeeff2;
+    // --color-primary-light: #ffecec;
   }, [darkTheme]);
 
   return (
@@ -77,10 +92,11 @@ function HeadNav() {
       {/* print overlay */}
       <Overlay show={showNavigation} state={setShowNavigation} />
       {/* overall navigation container */}
-      <nav className={navStyle}>
+      <nav className={navContainer}>
         {/* Logo Box: First Item of Navigation-Container */}
-        <div className="flex items-center gap-4">
-          <img src={Logo} alt="website logo" width={149} height={37} />
+        <div className="flex items-center gap-4 z-1">
+          <img src={Logo} alt="website logo" width={30} height={30} />
+          <strong className="text-3xl text-black font-bolder">LaslesVPN</strong>
         </div>
         {/* List: Second Item of Navigation-Container */}
         <div
@@ -133,7 +149,7 @@ function HeadNav() {
             </Button> */}
             <Button border={true} scale={true}>
               {/* Sign Up */}
-              <FaRegUserCircle />
+              <FaRegCircleUser />
             </Button>
             <Button
               border={true}
@@ -161,7 +177,7 @@ function HeadNav() {
           {/* Primary Button */}
           <Button border={true} scale={true}>
             {/* Sign Up */}
-            <FaRegUserCircle />
+            <FaRegCircleUser />
           </Button>
           <Button
             border={true}
@@ -177,13 +193,11 @@ function HeadNav() {
         <div
           // open/close menu handler state
           onClick={() => setShowNavigation(!showNavigation)}
-          className="hidden lg:block"
+          className="hidden lg:block absolute -top-7 right-0"
         >
           <Humberger active={showNavigation} />
         </div>
       </nav>
-      {/* cover navigation height size cause nav is fixed position */}
-      <div className="mt-30">&nbsp;</div>
     </>
   );
 }

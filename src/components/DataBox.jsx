@@ -1,5 +1,6 @@
 import { Fragment } from "react";
-import { IoCloud, IoLocationSharp, IoPerson } from "react-icons/io5";
+import { FaCloud } from "react-icons/fa";
+import { FaLocationCrosshairs, FaRegCircleUser } from "react-icons/fa6";
 
 function DataBox() {
   // All data items with they icons
@@ -7,22 +8,22 @@ function DataBox() {
     {
       label: "Users",
       number: "+90",
-      component: <IoPerson className="text-primary" />,
+      component: <FaRegCircleUser className="text-primary" />,
     },
     {
       label: "Locations",
       number: "+30",
-      component: <IoLocationSharp className="text-primary" />,
+      component: <FaLocationCrosshairs className="text-primary" />,
     },
     {
       label: "Servers",
       number: "+50",
-      component: <IoCloud className="text-primary" />,
+      component: <FaCloud className="text-primary" />,
       noBorder: true,
     },
   ];
   return (
-    <div className="flex justify-around md:justify-between p-16 mt-8 mx-auto shadow-2xl shadow-[rgba(13,16,37,0.1)] mb-10 rounded-3xl w-4/5 items-center md:w-[90%] sm:px-8 py-14 container">
+    <div className="flex justify-around md:justify-between p-16 mt-8 mx-auto shadow-2xl shadow-shadow-databox mb-10 rounded-3xl w-4/5 items-center md:w-[90%] sm:px-8 py-14 container">
       {/* Render data items from array */}
       {items.map((item, index) => (
         <Fragment key={index}>

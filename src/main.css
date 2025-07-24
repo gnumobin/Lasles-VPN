@@ -19,6 +19,8 @@
   --color-background: #f6f6f6;
   --color-super-gray: #dddddd;
   --color-shadow-features: #f3f4f6;
+  --color-shadow-databox: rgba(13, 16, 37, 0.1);
+  --color-mobile-menu-bg: #f3f4f6;
   /* Font Sizes */
   --text-xl: 1.4rem;
   --text-2xl: 1.6rem;

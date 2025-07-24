@@ -1,6 +1,6 @@
 import HeadBox from "./HeadBox";
 // import Carousel from "./Carousel/Carousel";
-// import asstes
+// import assets
 import FirstUserPicture from "../assets/user/user-1.jpg";
 import SecondUserPicture from "../assets/user/user-2.jpg";
 import ThirdUserPicture from "../assets/user/user-3.png";
