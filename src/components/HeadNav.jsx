@@ -10,7 +10,7 @@ import UserPicture from "../assets/girl.jpg";
 function HeadNav() {
   // Duplicate Styles for navigation list (ul tag)
   const navListStyles =
-    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col h-full top-0 lg:w-2/3 lg:bg-gray-100 lg:p-10 z-20 items-center lg:items-stretch navContainer";
+    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col lg:h-[98dvh] top-2.5 lg:w-2/3 lg:bg-gray-100 lg:p-10 z-20 items-center lg:items-stretch navContainer";
   // Navigation Items Array
   const navItems = [
     { label: "About", link: "#" },
@@ -39,14 +39,14 @@ function HeadNav() {
       {/* overall navigation container */}
       <nav className={navStyle}>
         {/* Logo Box: First Item of Navigation-Container */}
-        <div className="flex items-center gap-4 ">
+        <div className="flex items-center gap-4">
           <img src={Logo} alt="website logo" width={149} height={37} />
         </div>
         {/* List: Second Item of Navigation-Container */}
         <div
           className={
             showNavigation
-              ? navListStyles + " lg:-translate-x-20"
+              ? navListStyles + " lg:-translate-x-10"
               : navListStyles + " lg:-translate-x-350 "
           }
         >
@@ -62,7 +62,7 @@ function HeadNav() {
               />
             </div>
             <div className="space-y-5">
-              <p className="font-medium text-black text-3xl">Sarah Connor</p>
+              <p className="font-medium text-black text-3xl">Emily</p>
               <p className="text-xl flex gap-2 items-center">
                 <span className="text-secondary -mt-1">●</span>
                 <span className="uppercase select-none">Online</span>
@@ -113,7 +113,7 @@ function HeadNav() {
         {/* Mobile Menu: Button */}
         <div
           // open/close menu handler state
-          onClick={(_) => setShowNavigation(!showNavigation)}
+          onClick={() => setShowNavigation(!showNavigation)}
           className="hidden lg:block"
         >
           <Humberger active={showNavigation} />
