@@ -79,7 +79,7 @@ function HeadNav() {
                 <a
                   aria-label={item.label}
                   href={item.link}
-                  className="lg:bg-white lg:p-8 lg:rounded-lg hover:text-black duration-200 border-b-1 border-transparent hover:border-black lg:block"
+                  className="lg:bg-white lg:p-8 lg:rounded-lg duration-200 border-b-1 border-transparent block hover:text-black hover:scale-150 hover:skew-y-6"
                 >
                   {item.label}
                 </a>
