@@ -22,7 +22,7 @@ function Button({
   // if button type is cta button get background (primary-color) and saddle shadow
   const typeBtn =
     type === "cta"
-      ? " bg-primary text-white rounded-xl shadow-2xl shadow-primary px-30 py-8 cta-animted"
+      ? " bg-primary !text-[#fff] rounded-xl shadow-2xl shadow-primary px-30 py-8 cta-animted hover:!text-black"
       : " ";
   // for shop type apply: 66.6% width and bigger font-size
   const shopBtn =

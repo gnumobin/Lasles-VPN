@@ -4,13 +4,13 @@ import CardPicture from "../assets/card.png";
 
 function Card({ active, data }) {
   const { title, list, price } = data;
-  // Handle price: if price text has month seprate price string
+  // Handle price: if price text has month separate price string
   const showPrice = price.includes("/") ? price.split("/") : false;
   // Card container: default styles
   const defaultStyles =
     "bg-white rounded-3xl py-22 px-15 space-y-15 xl:px-10 sm:w-5/6 sm:mx-auto card hover:-translate-y-3 duration-200 border-2 hover:border-transparent hover:shadow-2xl";
   // if active is true:  add primary border color to card container if not: add gray color to card container
-  const activeStyle = active ? " border-primary" : " border-[#ddd] ";
+  const activeStyle = active ? " border-primary" : " border-super-gray";
 
   return (
     <figure className={defaultStyles + activeStyle}>

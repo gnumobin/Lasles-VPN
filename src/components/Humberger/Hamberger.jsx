@@ -1,4 +1,3 @@
-import React from "react";
 import "./Hamberger.scss";
 
 function Humberger({ active, onClick, className }) {
@@ -6,7 +5,9 @@ function Humberger({ active, onClick, className }) {
   // print a svg for better animation and user experience
   return (
     <svg
-      className={active ? "ham ham6 active " + className : "ham6 ham " + className}
+      className={
+        active ? "ham ham6 active " + className : "ham6 ham " + className
+      }
       viewBox="0 0 100 100"
       width="80"
       onClick={onClick}

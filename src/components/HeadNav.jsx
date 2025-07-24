@@ -7,8 +7,7 @@ import Humberger from "./Humberger/Hamberger";
 import Logo from "../assets/logo.svg";
 import UserPicture from "../assets/girl.jpg";
 import { FaRegMoon, FaRegUserCircle } from "react-icons/fa";
-import { SiGnuprivacyguard } from "react-icons/si";
-import { MdOutlineAccountCircle } from "react-icons/md";
+import { useEffect } from "react";
 
 function HeadNav() {
   // Duplicate Styles for navigation list (ul tag)
@@ -34,9 +33,47 @@ function HeadNav() {
 
   // for not re-render
   const navStyle = showNavigation ? navContainer : `${navContainer} bg-white`;
+  //
+  const [darkTheme, setDarkTheme] = useState(false);
+  //
+  const ballStyle = `bg-background w-50 h-50 rounded-full scale-[${
+    darkTheme ? "40" : "0"
+  }] fixed -top-10 right-13 transition duration-800 ease`;
+  //
+  const changeThemeHandler = () => {
+    setDarkTheme((prev) => !prev);
+  };
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--color-background",
+      darkTheme ? "#0b132a" : "#f6f6f6"
+    );
+    document.documentElement.style.setProperty(
+      "--color-black",
+      darkTheme ? "#eeeff2" : "#0b132a"
+    );
+    document.documentElement.style.setProperty(
+      "--color-gray",
+      darkTheme ? "#dddddd" : "#4f5665"
+    );
+    document.documentElement.style.setProperty(
+      "--color-white",
+      darkTheme ? "#232b3f" : "white"
+    );
+    document.documentElement.style.setProperty(
+      "--color-super-gray",
+      darkTheme ? "#4f5665" : "#dddddd"
+    );
+    document.documentElement.style.setProperty(
+      "--color-shadow-features",
+      darkTheme ? "#101828" : "#f3f4f6"
+    );
+  }, [darkTheme]);
 
   return (
     <>
+      <div className={ballStyle}></div>
       {/* print overlay */}
       <Overlay show={showNavigation} state={setShowNavigation} />
       {/* overall navigation container */}
@@ -88,11 +125,24 @@ function HeadNav() {
           </ul>
           {/* Buttons! But just show on smaller screens as list item */}
           <div className="hidden lg:block text-center">
-            <Button border={false} scale={true}>
+            {/* <Button border={false} scale={true}>
               Sign In
             </Button>
             <Button border={true} scale={true}>
               Sign Up
+            </Button> */}
+            <Button border={true} scale={true}>
+              {/* Sign Up */}
+              <FaRegUserCircle />
+            </Button>
+            <Button
+              border={true}
+              scale={true}
+              custom="border-black !text-black [&>span]:bg-black hover:!text-background hover:!border-black"
+              onClick={changeThemeHandler}
+            >
+              {/* Dark Mode */}
+              <FaRegMoon />
             </Button>
           </div>
           <p className="text-center hidden lg:block uppercase mt-auto">
@@ -117,6 +167,7 @@ function HeadNav() {
             border={true}
             scale={true}
             custom="border-black !text-black [&>span]:bg-black hover:!text-background hover:!border-black"
+            onClick={changeThemeHandler}
           >
             {/* Dark Mode */}
             <FaRegMoon />
