@@ -1,5 +1,6 @@
 // import assets
 import { IoStar } from "react-icons/io5";
+import { PiStarBold, PiStarFill } from "react-icons/pi";
 
 function Testimonial({ data }) {
   const { author, picture, quote, score, address } = data;
@@ -28,7 +29,7 @@ function Testimonial({ data }) {
         </div>
         <div className="score flex items-center gap-3 justify-center">
           <span className="text-2xl text-black">{score}</span>
-          <IoStar size={16} color="#FEA250" />
+          <PiStarFill size={16} color="#FEA250" />
         </div>
       </div>
       {/* quote */}

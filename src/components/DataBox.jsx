@@ -1,6 +1,5 @@
 import { Fragment } from "react";
-import { FaCloud } from "react-icons/fa";
-import { FaLocationCrosshairs, FaRegCircleUser } from "react-icons/fa6";
+import { PiCloudRainBold, PiMapPinAreaBold, PiUserBold } from "react-icons/pi";
 
 function DataBox() {
   // All data items with they icons
@@ -8,17 +7,17 @@ function DataBox() {
     {
       label: "Users",
       number: "+90",
-      component: <FaRegCircleUser className="text-primary" />,
+      component: <PiUserBold className="text-primary" />,
     },
     {
       label: "Locations",
       number: "+30",
-      component: <FaLocationCrosshairs className="text-primary" />,
+      component: <PiMapPinAreaBold className="text-primary" />,
     },
     {
       label: "Servers",
       number: "+50",
-      component: <FaCloud className="text-primary" />,
+      component: <PiCloudRainBold className="text-primary" />,
       noBorder: true,
     },
   ];

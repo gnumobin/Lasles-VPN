@@ -13,7 +13,7 @@ function Hero() {
           <strong className="font-extrabold">LaslesVPN</strong>.
         </h1>
         <p className="leading-11 mb-20 text-2xl md:text-[1.4rem] lg:w-3/4 mx-auto">
-          Provide a network for all your needs with ease and fun using
+          Provide a network for all your needs with ease and fun using{" "}
           <strong>LaslesVPN</strong> discover interesting features from us.
         </p>
         {/* Call to action button (from custom component) */}

@@ -1,7 +1,11 @@
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import "./Footer.scss";
 // import assets
 import Logo from "../../assets/logo.png";
+import {
+  PiFacebookLogoBold,
+  PiInstagramLogoBold,
+  PiTwitterLogoBold,
+} from "react-icons/pi";
 
 function Footer() {
   // all of navigation items: title and lists (anchors)
@@ -28,9 +32,9 @@ function Footer() {
   ];
   // all social link (icons)
   const socialLinkList = [
-    <FaFacebookF className="relative z-10" />,
-    <FaTwitter className="relative z-10" />,
-    <FaInstagram className="relative z-10" />,
+    <PiFacebookLogoBold className="relative z-10" />,
+    <PiTwitterLogoBold className="relative z-10" />,
+    <PiInstagramLogoBold className="relative z-10" />,
   ];
 
   return (

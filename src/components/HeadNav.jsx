@@ -9,11 +9,12 @@ import UserPicture from "../assets/girl.jpg";
 import { FaRegMoon } from "react-icons/fa";
 import { useEffect } from "react";
 import { FaRegCircleUser } from "react-icons/fa6";
+import { PiMoonBold, PiUserBold } from "react-icons/pi";
 
 function HeadNav() {
   // Duplicate Styles for navigation list (ul tag)
   const navListStyles =
-    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col lg:h-[98dvh] top-2.5 lg:w-2/3 lg:bg-mobile-menu-bg lg:p-10 z-20 items-center lg:items-stretch navContainer";
+    "flex gap-[4rem] text-2xl lg:fixed lg:flex-col lg:h-[98dvh] top-3.5 lg:w-2/3 lg:bg-mobile-menu-bg lg:p-10 z-20 items-center lg:items-stretch navContainer";
   // Navigation Items Array
   const navItems = [
     { label: "About", link: "#" },
@@ -37,53 +38,37 @@ function HeadNav() {
   //
   const ballStyleDefault = `bg-background w-40 h-40 rounded-full fixed -top-10 right-13 dark-mode-ball`;
   const ballStyle = darkTheme
-    ? `${ballStyleDefault} scale-[30]`
+    ? `${ballStyleDefault} scale-[30] xs:scale-[15]`
     : `${ballStyleDefault} scale-[0]`;
 
   //
   const changeThemeHandler = () => {
-    setDarkTheme((prev) => !prev);
+    const newTheme = !darkTheme;
+    setDarkTheme(newTheme);
+    localStorage.setItem("dark", JSON.stringify(newTheme));
   };
 
   useEffect(() => {
-    document.documentElement.style.setProperty(
-      "--color-background",
-      darkTheme ? "#0b132a" : "#f6f6f6"
-    );
-    document.documentElement.style.setProperty(
-      "--color-black",
-      darkTheme ? "#eeeff2" : "#0b132a"
-    );
-    document.documentElement.style.setProperty(
-      "--color-gray",
-      darkTheme ? "#dddddd" : "#4f5665"
-    );
-    document.documentElement.style.setProperty(
-      "--color-white",
-      darkTheme ? "#232b3f" : "white"
-    );
-    document.documentElement.style.setProperty(
-      "--color-super-gray",
-      darkTheme ? "#4f5665" : "#dddddd"
-    );
-    document.documentElement.style.setProperty(
-      "--color-shadow-features",
-      darkTheme ? "#101828" : "#f3f4f6"
-    );
-    document.documentElement.style.setProperty(
+    const storedTheme = localStorage.getItem("dark");
+    if (storedTheme !== null) {
+      setDarkTheme(JSON.parse(storedTheme));
+    }
+  }, []);
+
+  useEffect(() => {
+    const $ = document.documentElement.style;
+    $.setProperty("--color-background", darkTheme ? "#0b132a" : "#f6f6f6");
+    $.setProperty("--color-black", darkTheme ? "#eeeff2" : "#0b132a");
+    $.setProperty("--color-gray", darkTheme ? "#dddddd" : "#4f5665");
+    $.setProperty("--color-white", darkTheme ? "#121c30" : "white");
+    $.setProperty("--color-super-gray", darkTheme ? "#4f5665" : "#dddddd");
+    $.setProperty("--color-shadow-features", darkTheme ? "#101828" : "#f3f4f6");
+    $.setProperty(
       "--color-shadow-databox",
       darkTheme ? "rgba(242, 239, 218, 0.1)" : "rgba(13, 16, 37, 0.1)"
     );
-    document.documentElement.style.setProperty(
-      "--color-mobile-menu-bg",
-      darkTheme ? "#101828" : "#f3f4f6"
-    );
-    document.documentElement.style.setProperty(
-      "--color-mobile-menu-bg",
-      darkTheme ? "#101828" : "#f3f4f6"
-    );
-    //     --color-super-light: #eeeff2;
-    // --color-primary-light: #ffecec;
+    $.setProperty("--color-mobile-menu-bg", darkTheme ? "#101828" : "#f3f4f6");
+    $.setProperty("--color-primary-light", darkTheme ? "#121c30" : "#ffecec");
   }, [darkTheme]);
 
   return (
@@ -140,7 +125,7 @@ function HeadNav() {
             ))}
           </ul>
           {/* Buttons! But just show on smaller screens as list item */}
-          <div className="hidden lg:block text-center">
+          <div className="hidden lg:flex justify-center gap-2">
             {/* <Button border={false} scale={true}>
               Sign In
             </Button>
@@ -149,7 +134,7 @@ function HeadNav() {
             </Button> */}
             <Button border={true} scale={true}>
               {/* Sign Up */}
-              <FaRegCircleUser />
+              <PiUserBold />
             </Button>
             <Button
               border={true}
@@ -158,11 +143,11 @@ function HeadNav() {
               onClick={changeThemeHandler}
             >
               {/* Dark Mode */}
-              <FaRegMoon />
+              <PiMoonBold />
             </Button>
           </div>
           <p className="text-center hidden lg:block uppercase mt-auto">
-            Develop by:
+            Develop by:{" "}
             <a target="_blank" href="https://github.com/gnumobin">
               <strong className="text-blue-500 capitalize">GnuMobin</strong>
             </a>
@@ -177,7 +162,7 @@ function HeadNav() {
           {/* Primary Button */}
           <Button border={true} scale={true}>
             {/* Sign Up */}
-            <FaRegCircleUser />
+            <PiUserBold />
           </Button>
           <Button
             border={true}
@@ -186,7 +171,7 @@ function HeadNav() {
             onClick={changeThemeHandler}
           >
             {/* Dark Mode */}
-            <FaRegMoon />
+            <PiMoonBold />
           </Button>
         </div>
         {/* Mobile Menu: Button */}
@@ -195,7 +180,7 @@ function HeadNav() {
           onClick={() => setShowNavigation(!showNavigation)}
           className="hidden lg:block absolute -top-7 right-0"
         >
-          <Humberger active={showNavigation} />
+          <Humberger active={showNavigation} className={"stroke-black"} />
         </div>
       </nav>
     </>
